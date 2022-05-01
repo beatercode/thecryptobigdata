@@ -1,0 +1,4948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hustler DAO | Discord Elite</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow:200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <!-- master external import -->
+    <link rel="stylesheet" type="text/css" href="assets/css/master_ext.css">
+    <!-- plugin scripts -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/zimed-icon.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.bxslider.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- manual css -->
+    <style>
+        .HomepageLogoGrid .Section__layout {
+            --sectionPaddingTop: 0
+        }
+
+        .SiteHeader {
+            --siteMenuTransition: 250ms;
+            --siteMenuArrowSpacing: 13px;
+            --siteMenuArrowOffset: 0;
+            --userLogoColor: var(--navColor);
+            position: relative;
+            z-index: 100;
+            background-color: var(--backgroundColor)
+        }
+
+        @media (max-width:899px) {
+            .SiteHeader {
+                --desktopNavDisplay: none
+            }
+        }
+
+        @media (min-width:900px) {
+            .SiteHeader {
+                --mobileNavDisplay: none
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .SiteHeader {
+                --siteMenuTransition: 1ms
+            }
+        }
+
+        .SiteHeader--noTransitions {
+            --siteMenuTransition: 0ms
+        }
+
+        .SiteHeader.variant--Overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: none
+        }
+
+        .SiteHeader--hasGuides:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            margin: 0;
+            border: none;
+            background: linear-gradient(90deg, var(--guideDashedColor), var(--guideDashedColor) 50%, transparent 0, transparent);
+            background-size: 8px 1px;
+            content: ""
+        }
+
+        .SiteHeader--excludesNav {
+            pointer-events: none
+        }
+
+        .SiteHeader--excludesNav .SiteHeader__logo {
+            pointer-events: auto
+        }
+
+        .SiteHeader.theme--Transparent:after {
+            display: none
+        }
+
+        .SiteHeader__guidesContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden
+        }
+
+        .SiteHeader.theme--Transparent .SiteHeader__guidesContainer {
+            display: none
+        }
+
+        .SiteHeader__container {
+            position: relative;
+            max-width: calc(var(--columnPaddingNormal)*2 + var(--layoutWidth));
+            margin: 0 auto;
+            padding: 0 var(--columnPaddingNormal)
+        }
+
+        .SiteHeader__navContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 56px;
+            padding: 32px var(--columnPaddingNormal) 12px
+        }
+
+        @media (min-width:900px) {
+            .SiteHeader__navContainer {
+                padding: 12px var(--columnPaddingNormal)
+            }
+        }
+
+        @media (pointer:fine) {
+            .SiteHeader__logo {
+                transition: var(--hoverTransition);
+                transition-property: color, opacity
+            }
+
+            .SiteHeader__logo:hover {
+                color: var(--navHoverColor);
+                opacity: var(--navHoverOpacity)
+            }
+        }
+
+        .SiteHeader__logoLink {
+            display: block;
+            outline: none;
+            padding: 4px;
+            margin: -4px
+        }
+
+        .keyboard-navigation .SiteHeader__logoLink:focus {
+            box-shadow: var(--focusBoxShadow);
+            border-radius: 2px
+        }
+
+        .SiteHeader__ctaNav {
+            display: var(--desktopNavDisplay, initial)
+        }
+
+        .SiteHeader__menuNav {
+            display: var(--mobileNavDisplay, initial)
+        }
+
+        .SiteHeader__mobileMenu {
+            transform: scale(.95);
+            transform-origin: 100% 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--siteMenuTransition);
+            transition-property: transform, opacity
+        }
+
+        .SiteHeader--mobileMenuVisible .SiteHeader__mobileMenu {
+            transform: scale(1);
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        @media (min-width:900px) {
+            .SiteHeader__mobileMenu {
+                display: none
+            }
+        }
+
+        .SiteHeader__menuContainer {
+            display: var(--desktopNavDisplay, block);
+            position: absolute;
+            top: calc(100% - 1px - var(--siteMenuArrowSpacing));
+            left: 0;
+            width: 100%;
+            height: 1000px;
+            z-index: 1;
+            pointer-events: none;
+            perspective: 2000px;
+            overflow: hidden;
+            opacity: 0;
+            transition-property: opacity;
+            transition: var(--siteMenuTransition)
+        }
+
+        .SiteHeader--dropdownVisible .SiteHeader__menuContainer {
+            opacity: 1
+        }
+
+        .SiteHeader__menu {
+            position: absolute;
+            top: 0;
+            left: 50%
+        }
+
+        .Guides {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 0 var(--columnPaddingNormal);
+            pointer-events: none
+        }
+
+        @media (max-width:1111px) {
+            .Guides {
+                max-width: var(--windowWidth)
+            }
+        }
+
+        .Guides__container {
+            display: grid;
+            grid: 1fr/repeat(var(--columnCountMax), 1fr);
+            position: relative;
+            max-width: var(--layoutWidth);
+            height: 100%;
+            margin: 0 auto
+        }
+
+        .Guides__guide {
+            width: 1px;
+            background: linear-gradient(180deg, var(--guideDashedColor), var(--guideDashedColor) 50%, transparent 0, transparent);
+            background-size: 1px 8px
+        }
+
+        .Guides__guide:first-of-type,
+        .Guides__guide:last-of-type {
+            background: var(--guideSolidColor)
+        }
+
+        .Guides__guide:last-of-type {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%
+        }
+
+        @media (max-width:599px) {
+            .Guides__guide:nth-of-type(3n) {
+                display: none
+            }
+        }
+
+        @media (max-width:899px) {
+            .Guides__guide:nth-of-type(2n) {
+                display: none
+            }
+        }
+
+        .UserLogo {
+            --userLogoMaxWidth: 160px;
+            display: block
+        }
+
+        @media (max-width:899px) {
+            .UserLogo {
+                max-width: var(--userLogoMaxWidth)
+            }
+        }
+
+        .theme--White .UserLogo.variant--Flat {
+            --userLogoColor: #b2bcc7
+        }
+
+        .theme--Light .UserLogo.variant--Flat {
+            --userLogoColor: #aab4c1
+        }
+
+        .theme--Dark .UserLogo.variant--Flat {
+            --userLogoColor: #fff
+        }
+
+        .UserLogo.variant--Flat {
+            --userLogoColorAlt: var(--backgroundColor)
+        }
+
+        .SiteHeaderNavItem+.SiteHeaderNavItem {
+            margin-left: -1px
+        }
+
+        .SiteHeaderNavItem__link,
+        .SiteHeaderNavItem__link.Link {
+            --linkColor: var(--navColor);
+            --linkHoverColor: var(--navHoverColor);
+            --linkHoverOpacity: var(--navHoverOpacity);
+            padding: 10px 20px;
+            font: var(--fontWeightBold) 15px/1.6 var(--fontFamily);
+            letter-spacing: .2px;
+            color: var(--navColor);
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: none;
+            outline: none
+        }
+
+        .SiteHeaderNavItem__link.Link[aria-haspopup=true],
+        .SiteHeaderNavItem__link[aria-haspopup=true] {
+            cursor: default;
+            transition: var(--hoverTransition);
+            transition-property: color, opacity
+        }
+
+        .SiteHeaderNavItem__link.Link[aria-expanded=true],
+        .SiteHeaderNavItem__link[aria-expanded=true] {
+            color: var(--linkHoverColor);
+            opacity: var(--linkHoverOpacity)
+        }
+
+        .keyboard-navigation .SiteHeaderNavItem__link.Link:focus,
+        .keyboard-navigation .SiteHeaderNavItem__link:focus {
+            box-shadow: var(--focusBoxShadow);
+            border-radius: 4px
+        }
+
+        .Link {
+            font-weight: var(--linkWeight, var(--fontWeightSemibold));
+            cursor: pointer;
+            color: var(--linkColor);
+            opacity: var(--linkOpacity, 1);
+            transition: var(--hoverTransition);
+            transition-property: color, opacity;
+            outline: none
+        }
+
+        @media (pointer:fine) {
+            .Link:hover {
+                color: var(--linkHoverColor, var(--linkColor));
+                opacity: var(--linkHoverOpacity, 1)
+            }
+        }
+
+        @media (pointer:coarse) {
+            .Link:active {
+                color: var(--linkHoverColor, var(--linkColor));
+                opacity: var(--linkHoverOpacity, 1)
+            }
+        }
+
+        .keyboard-navigation .Link:focus {
+            box-shadow: var(--focusBoxShadow);
+            border-radius: 2px
+        }
+
+        .Link__icon {
+            position: relative;
+            top: 2px;
+            margin: 0 8px 0 0
+        }
+
+        .SiteHeaderNav__list {
+            display: var(--desktopNavDisplay, flex);
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .CtaButton {
+            display: inline-block;
+            padding: 3px 0 6px;
+            border-radius: 16.5px;
+            font: var(--ctaFont);
+            color: var(--buttonColor);
+            transition: var(--hoverTransition);
+            outline: none
+        }
+
+        .keyboard-navigation .CtaButton:focus {
+            box-shadow: var(--focusBoxShadow)
+        }
+
+        .CtaButton.variant--Link {
+            font-weight: var(--linkWeight, var(--fontWeightSemibold));
+            transition-property: color, opacity
+        }
+
+        @media (pointer:fine) {
+            .CtaButton.variant--Link:hover {
+                color: var(--linkHoverColor, var(--linkColor));
+                opacity: var(--linkHoverOpacity, 1)
+            }
+        }
+
+        @media (pointer:coarse) {
+            .CtaButton.variant--Link:active {
+                color: var(--linkHoverColor, var(--linkColor));
+                opacity: var(--linkHoverOpacity, 1)
+            }
+        }
+
+        .CtaButton.variant--Button {
+            padding-left: 16px;
+            padding-right: 16px;
+            background-color: var(--buttonColor);
+            color: var(--knockoutColor);
+            white-space: nowrap;
+            transition-property: background-color, opacity
+        }
+
+        .CtaButton.variant--Button.CtaButton--arrow {
+            padding-right: 12px
+        }
+
+        @media (pointer:fine) {
+            .CtaButton.variant--Button:hover {
+                background-color: var(--buttonHoverColor, var(--buttonColor));
+                opacity: var(--buttonHoverOpacity, 1)
+            }
+        }
+
+        @media (pointer:coarse) {
+            .CtaButton.variant--Button:active {
+                background-color: var(--buttonHoverColor, var(--buttonColor));
+                opacity: var(--buttonHoverOpacity, 1)
+            }
+        }
+
+        .HoverArrow {
+            --arrowSpacing: 5px;
+            --arrowHoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+            --arrowHoverOffset: translateX(3px);
+            --arrowTipTransform: none;
+            --arrowLineOpacity: 0;
+            position: relative;
+            top: 1px;
+            margin-left: var(--arrowSpacing);
+            stroke-width: 2px;
+            fill: none;
+            stroke: currentColor
+        }
+
+        .HoverArrow--sizeSmall {
+            --arrowSpacing: 4px;
+            stroke-width: 1.5px
+        }
+
+        .HoverArrow__linePath {
+            opacity: var(--arrowLineOpacity);
+            transition: opacity var(--hoverTransition, var(--arrowHoverTransition))
+        }
+
+        .HoverArrow__tipPath {
+            transform: var(--arrowTipTransform);
+            transition: transform var(--hoverTransition, var(--arrowHoverTransition))
+        }
+
+        @media (pointer:fine) {
+
+            a:hover .HoverArrow__linePath,
+            button:hover .HoverArrow__linePath {
+                --arrowLineOpacity: 1
+            }
+
+            a:hover .HoverArrow__tipPath,
+            button:hover .HoverArrow__tipPath {
+                --arrowTipTransform: var(--arrowHoverOffset)
+            }
+        }
+
+        @media (pointer:coarse) {
+
+            a:active .HoverArrow__linePath,
+            button:active .HoverArrow__linePath {
+                --arrowLineOpacity: 1
+            }
+
+            a:active .HoverArrow__tipPath,
+            button:active .HoverArrow__tipPath {
+                --arrowTipTransform: var(--arrowHoverOffset)
+            }
+        }
+
+        .MenuButton {
+            --buttonHeight: 32px;
+            display: inline-flex;
+            align-items: center;
+            height: var(--buttonHeight);
+            padding: 0 calc(var(--buttonHeight)/2);
+            border-radius: calc(var(--buttonHeight)/2);
+            background-color: var(--buttonColor);
+            color: var(--knockoutColor);
+            transition: var(--hoverTransition);
+            transition-property: background-color, opacity
+        }
+
+        @media (pointer:fine) {
+            .MenuButton:hover {
+                background-color: var(--buttonHoverColor, var(--buttonColor));
+                opacity: var(--buttonHoverOpacity, 1)
+            }
+        }
+
+        @media (pointer:coarse) {
+            .MenuButton:active {
+                background-color: var(--buttonHoverColor, var(--buttonColor));
+                opacity: var(--buttonHoverOpacity, 1)
+            }
+        }
+
+        .SiteMobileMenu {
+            --siteMenuMargin: var(--columnPaddingNormal);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--siteMenuMargin);
+            z-index: 1
+        }
+
+        .SiteMobileMenu__card {
+            position: relative
+        }
+
+        .SiteMobileMenu__closeButton {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            border: none;
+            outline: none;
+            background: none
+        }
+
+        .SiteMobileMenu__footer {
+            display: flex;
+            justify-content: center
+        }
+
+        .SiteNavItem {
+            margin-left: calc(var(--siteNavIconSize) + var(--siteNavIconSpacing));
+            font: var(--fontWeightNormal) 14px/1.428571429 var(--fontFamily);
+            letter-spacing: .2px
+        }
+
+        .SiteNavItem--hasIcon {
+            margin-left: 0
+        }
+
+        .SiteNavItem__link {
+            display: inline-flex;
+            color: #0a2540;
+            outline: none
+        }
+
+        .keyboard-navigation .SiteNavItem__link:focus {
+            box-shadow: var(--focusBoxShadow);
+            border-radius: 2px
+        }
+
+        .SiteNavList--iconSizeLarge .SiteNavItem__link {
+            align-items: center
+        }
+
+        @media (max-width:899px) {
+            .SiteNavItem__link {
+                padding: 6px
+            }
+        }
+
+        .SiteNavItem__iconContainer {
+            --iconLightColor: #88add2;
+            --iconDarkColor: #0a2540;
+            --iconKnockoutColor: #fff;
+            flex: 0 0 auto;
+            width: var(--siteNavIconSize);
+            height: var(--siteNavIconSize);
+            margin-right: var(--siteNavIconSpacing)
+        }
+
+        .SiteNavItem__iconContainer svg {
+            width: inherit;
+            height: inherit
+        }
+
+        .SiteNavItem__iconContainer circle,
+        .SiteNavItem__iconContainer path,
+        .SiteNavItem__iconContainer rect {
+            transition: var(--hoverTransition);
+            transition-property: fill, stroke
+        }
+
+        .SiteNavList--iconSizeNormal .SiteNavItem__iconContainer {
+            margin-top: 3px
+        }
+
+        .SiteNavItem__link:hover .SiteNavItem__iconContainer {
+            --iconLightColor: initial;
+            --iconDarkColor: initial;
+            --iconKnockoutColor: initial
+        }
+
+        .SiteNavItem__label {
+            color: inherit
+        }
+
+        .SiteNavItem--hasIcon .SiteNavItem__label {
+            font-weight: var(--fontWeightSemibold)
+        }
+
+        .SiteNavItem--hasNoIcon.SiteNavItem--hasNoBody .SiteNavItem__label {
+            transition: var(--hoverTransition);
+            transition-property: opacity;
+            opacity: .8
+        }
+
+        .SiteNavItem--hasNoIcon.SiteNavItem--hasNoBody .SiteNavItem__link:hover .SiteNavItem__label {
+            opacity: 1
+        }
+
+        .SiteNavItem__arrow.HoverArrow {
+            transition: var(--hoverTransition);
+            transition-property: opacity
+        }
+
+        .SiteNavItem--isArrowHidden .SiteNavItem__arrow.HoverArrow {
+            opacity: 0
+        }
+
+        @media (max-width:899px) {
+            .SiteNavItem--isArrowHidden .SiteNavItem__arrow.HoverArrow {
+                display: none
+            }
+        }
+
+        .SiteNavItem__link:hover .SiteNavItem__arrow.HoverArrow {
+            opacity: 1
+        }
+
+        @media (min-width:900px) {
+            .SiteNavItem--hasNoBody.SiteNavItem--isArrowHidden .SiteNavItem__arrow.HoverArrow {
+                display: none
+            }
+        }
+
+        .SiteNavItem__body {
+            color: inherit;
+            opacity: .6;
+            transition: var(--hoverTransition);
+            transition-property: opacity;
+            white-space: nowrap
+        }
+
+        .SiteNavItem__link:hover .SiteNavItem__body {
+            opacity: 1
+        }
+
+        @media (max-width:899px) {
+            .SiteNavItem__body {
+                display: none
+            }
+        }
+
+        .SiteNavList {
+            --siteNavIconSpacing: 10px;
+            --siteNavListMinWidth: 254px
+        }
+
+        .SiteNavList--iconSizeNormal {
+            --siteNavIconSize: 16px;
+            --siteNavListSpacing: 8px
+        }
+
+        .SiteNavList--iconSizeNormal .SiteNavItem--hasIcon+.SiteNavItem {
+            --siteNavListSpacing: 12px
+        }
+
+        .SiteNavList--iconSizeNormal .SiteNavItem--hasBody+.SiteNavItem {
+            --siteNavListSpacing: 22px
+        }
+
+        .SiteNavList--iconSizeLarge {
+            --siteNavIconSize: 32px;
+            --siteNavIconSpacing: 14px;
+            --siteNavListSpacing: 32px
+        }
+
+        .SiteNavList__title {
+            margin-bottom: var(--siteNavListSpacing);
+            font: var(--fontWeightBold) 13px/1.538461538 var(--fontFamily);
+            letter-spacing: .4px;
+            text-transform: uppercase;
+            color: #8898aa
+        }
+
+        @media (max-width:899px) {
+            .SiteNavList__title {
+                margin-bottom: calc(10px + var(--siteNavListSpacing))
+            }
+        }
+
+        @media (min-width:900px) {
+            .SiteNavList--iconSizeNormal .SiteNavList__title {
+                margin-left: calc(var(--siteNavIconSize) + var(--siteNavIconSpacing))
+            }
+        }
+
+        .SiteNavList__excludeTitleIndent .SiteNavList__title {
+            margin-left: 0
+        }
+
+        .SiteNavList__list {
+            min-width: var(--siteNavListMinWidth);
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .SiteNavList__list .SiteNavItem+.SiteNavItem {
+            margin-top: var(--siteNavListSpacing)
+        }
+
+        .SiteNavList[data-column-count="2"] .SiteNavList__list {
+            --columnCount: 2;
+            display: grid;
+            grid: auto/repeat(var(--columnCount), 1fr)
+        }
+
+        .SiteNavList[data-column-count="2"] .SiteNavList__list .SiteNavItem+.SiteNavItem {
+            margin-top: 0
+        }
+
+        @media (max-width:899px) {
+            .SiteNavList[data-column-count="2"] .SiteNavList__list {
+                margin: calc(var(--siteNavListSpacing)/-2)
+            }
+        }
+
+        @media (min-width:600px) {
+            .SiteNavList[data-column-count="2"] .SiteNavList__list {
+                --columnCount: 3
+            }
+        }
+
+        @media (min-width:750px) {
+            .SiteNavList[data-column-count="2"] .SiteNavList__list {
+                --columnCount: 4
+            }
+        }
+
+        @media (min-width:900px) {
+            .SiteNavList[data-column-count="2"] .SiteNavList__list {
+                gap: var(--siteNavListSpacing) var(--siteNavListSpacing)
+            }
+        }
+
+        .SiteMenuSection {
+            --siteMenuSpacing: 24px;
+            position: relative
+        }
+
+        @media (min-width:900px) {
+            .SiteMenuSection {
+                display: inline-block;
+                --siteMenuSpacing: 32px
+            }
+        }
+
+        @media (max-width:899px) {
+            .SiteMenuSection+.SiteMenuSection:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(90deg, var(--guideDashedColor), var(--guideDashedColor) 50%, transparent 0, transparent);
+                background-size: 8px 1px;
+                content: ""
+            }
+        }
+
+        .SiteMenuSection__body {
+            padding: var(--siteMenuSpacing)
+        }
+
+        .SiteMenuSection--variantCompact .SiteMenuSection__body {
+            padding: calc(var(--siteMenuSpacing) - 8px) var(--siteMenuSpacing)
+        }
+
+        .SiteMenuSection--variantNoPadding .SiteMenuSection__body {
+            padding: 0
+        }
+
+        .SiteMenuSection__footer {
+            --siteMenuFooterMargin: 4px;
+            margin: var(--siteMenuFooterMargin);
+            padding: calc(var(--siteMenuSpacing) - var(--siteMenuFooterMargin));
+            border-radius: 4px;
+            background-color: #f6f9fc
+        }
+
+        .SiteMenuSection--variantCompact .SiteMenuSection__footer {
+            background-color: #f0f3f6;
+            padding: calc(var(--siteMenuSpacing) - var(--siteMenuFooterMargin) - 8px) calc(var(--siteMenuSpacing) - var(--siteMenuFooterMargin))
+        }
+
+        .Card {
+            --cardShadow: none;
+            --cardShadowMargin: 0;
+            --cardMinHeight: 72px;
+            position: relative;
+            min-width: 100px;
+            min-height: var(--cardMinHeight);
+            border-radius: var(--cardBorderRadius);
+            background: var(--cardBackground);
+            box-shadow: var(--cardShadow);
+            max-width: var(--cardMaxWidth, none);
+            overflow: hidden
+        }
+
+        .Card--border {
+            border: 1px solid var(--cardBorderColor)
+        }
+
+        @media (max-width:599px) {
+            .Card--hasShadowMargin {
+                margin-bottom: var(--cardShadowMargin)
+            }
+        }
+
+        .Card--shadowXSmall {
+            --cardShadow: var(--cardShadowXSmall);
+            --cardShadowMargin: var(--cardShadowXSmallMargin)
+        }
+
+        .Card--shadowSmall {
+            --cardShadow: var(--cardShadowSmall);
+            --cardShadowMargin: var(--cardShadowSmallMargin)
+        }
+
+        .Card--shadowMedium {
+            --cardShadow: var(--cardShadowMedium);
+            --cardShadowMargin: var(--cardShadowMediumMargin)
+        }
+
+        .Card--shadowLarge {
+            --cardShadow: var(--cardShadowLarge);
+            --cardShadowMargin: var(--cardShadowLargeMargin)
+        }
+
+        .Card--shadowXLarge {
+            --cardShadow: var(--cardShadowXLarge);
+            --cardShadowMargin: var(--cardShadowXLargeMargin)
+        }
+
+        .SiteHeaderArrow {
+            --siteHeaderArrowBackgroundColor: var(--cardBackground);
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            margin: 0 0 0 -6px;
+            width: 12px;
+            height: 12px;
+            transform: translateY(12px) translateX(var(--siteMenuArrowOffset)) translateX(50%) rotate(45deg);
+            border-radius: 3px 0 0 0;
+            background-color: var(--siteHeaderArrowBackgroundColor);
+            box-shadow: -3px -3px 5px rgba(82, 95, 127, .04);
+            transition-property: transform;
+            transition-duration: var(--siteMenuTransition);
+            z-index: 2
+        }
+
+        .SiteHeader--dropdownVisible .SiteHeaderArrow {
+            transform: translateY(0) translateX(var(--siteMenuArrowOffset)) translateX(50%) rotate(45deg)
+        }
+
+        @media (max-width:899px) {
+            .SiteHeaderArrow {
+                display: none
+            }
+        }
+
+        .SiteHeaderArrow.SiteHeaderArrow--themeLight {
+            --siteHeaderArrowBackgroundColor: #f0f3f6
+        }
+
+        .SiteMenu {
+            --siteMenuOffset: 0;
+            --siteMenuRotateX: 0;
+            display: inline-block;
+            padding-top: var(--siteMenuArrowSpacing);
+            height: calc(var(--siteMenuHeight) + var(--siteMenuArrowSpacing));
+            transform: translateX(-50%) rotateX(var(--siteMenuRotateX));
+            transform-origin: 50% -50px;
+            transition: var(--siteMenuTransition);
+            transition-property: transform, width, height;
+            will-change: transform, width, height;
+            z-index: 2
+        }
+
+        .SiteMenu[hidden] {
+            --siteMenuRotateX: -15deg
+        }
+
+        .SiteMenu__card.Card {
+            position: relative;
+            height: 100%;
+            will-change: width;
+            transition: var(--siteMenuTransition);
+            z-index: 1
+        }
+
+        .SiteMenu__section {
+            --siteMenuSectionOffset: 0;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateX(var(--siteMenuSectionOffset));
+            transition: var(--siteMenuTransition);
+            transition-property: transform, opacity;
+            will-change: transform, opacity
+        }
+
+        .SiteMenu__section.SiteMenu__section--hasSubMenu {
+            left: 0;
+            transform: translateX(0) translateX(var(--siteMenuSectionOffset))
+        }
+
+        .SiteMenu__section[hidden] {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .SiteMenu__section[hidden].SiteMenu__section--left {
+            --siteMenuSectionOffset: -150px
+        }
+
+        .SiteMenu__section[hidden].SiteMenu__section--right {
+            --siteMenuSectionOffset: 150px
+        }
+
+        .SiteHeader--isTransitioning .SiteMenu__section--hasSubMenu {
+            left: 50%;
+            transform: translateX(-50%) translateX(var(--siteMenuSectionOffset))
+        }
+
+        .SiteHeader--noSubMenuTransition .SiteMenu__section--hasSubMenu {
+            transition: none
+        }
+
+        .SiteProductNav__layout {
+            --columnCount: 2;
+            display: inline-grid;
+            grid: auto/repeat(var(--columnCount), 1fr);
+            gap: calc(var(--siteMenuSpacing)*1.5) var(--siteMenuSpacing)
+        }
+
+        @media (min-width:1200px) {
+            .SiteProductNav__layout {
+                --columnCount: 4
+            }
+        }
+
+        .SiteCompanyNav__bodyLayout {
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            -moz-column-gap: var(--siteMenuSpacing);
+            column-gap: var(--siteMenuSpacing)
+        }
+
+        .SiteDevelopersNav__bodyLayout {
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            gap: var(--siteMenuSpacing) var(--siteMenuSpacing)
+        }
+
+        .SiteDevelopersNav__header {
+            grid-area: auto/span 2
+        }
+
+        .SiteDevelopersNav__footerLayout {
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            -moz-column-gap: var(--siteMenuSpacing);
+            column-gap: var(--siteMenuSpacing)
+        }
+
+        .SiteCompanyNav__bodyLayout {
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            -moz-column-gap: var(--siteMenuSpacing);
+            column-gap: var(--siteMenuSpacing)
+        }
+
+        .SiteCompanyNav__bodyLayout .SiteNavList {
+            --siteNavListMinWidth: 190px
+        }
+
+        .SiteSubNavItem {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            padding: 10px 16px 10px 12px;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            text-align: left;
+            cursor: default;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none
+        }
+
+        .keyboard-navigation .SiteSubNavItem:focus .SiteSubNavItem__label {
+            margin-left: -2px;
+            padding: 2px;
+            border-radius: 12px;
+            box-shadow: var(--focusBoxShadow)
+        }
+
+        .SiteSubNavItem__label {
+            color: var(--navColor);
+            font: var(--fontWeightSemibold) 13px/1.8461538462 var(--fontFamily);
+            letter-spacing: .5px
+        }
+
+        .SiteSubNavItem__body {
+            color: #4f5b76;
+            font: var(--fontWeightNormal) 13px/1.5384615385 var(--fontFamily);
+            letter-spacing: .2px
+        }
+
+        .SiteSubMenuSection {
+            --siteSubMenuSectionNavOffset: 0;
+            --siteSubMenuSectionPadding: 22px 16px 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(0);
+            transition-property: transform, opacity;
+            will-change: transform, opacity;
+            z-index: 2;
+            display: grid;
+            grid: auto/repeat(var(--siteSubMenuSectionListColumnCount), minmax(0, 1fr));
+            -moz-column-gap: var(--siteMenuSpacing);
+            column-gap: var(--siteMenuSpacing);
+            width: 100%;
+            padding: var(--siteSubMenuSectionPadding);
+            opacity: 1
+        }
+
+        @media (prefers-reduced-motion:no-preference) {
+            .SiteSubMenuSection {
+                transition-delay: 25ms;
+                transition: var(--siteMenuTransition)
+            }
+        }
+
+        .SiteSubMenuSection[hidden] {
+            transform: translateY(var(--siteSubMenuSectionNavOffset));
+            transition-delay: 0s;
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .SiteSubMenuSection[hidden].SiteSubMenuSection--before {
+            --siteSubMenuSectionNavOffset: -60px
+        }
+
+        .SiteSubMenuSection[hidden].SiteSubMenuSection--after {
+            --siteSubMenuSectionNavOffset: 60px
+        }
+
+        .SiteSubMenuSection .SiteNavList__list .SiteNavItem+.SiteNavItem {
+            --siteNavListSpacing: 30px
+        }
+
+        .SiteSubMenu {
+            --siteSubMenuBackgroundColor: #f0f3f6;
+            --siteSubMenuTriggerOffsetY: 0px;
+            --siteSubMenuTriggerOffsetYCenter: 42px;
+            --siteSubMenuTriggerBackgroundHeight: 84px;
+            --siteSubMenuTriggerTransition: transform 150ms linear, height 150ms;
+            --siteSubMenuNavWidth: 244px;
+            --siteSubMenuNavGap: 10px;
+            --siteSubMenuSectionListColumnCount: 2;
+            --siteSubMenuSectionListColumnWidth: 258px;
+            --siteSubMenuSectionListBackgroundRadius: 4px;
+            --siteSubMenuCollaspedScale: 0.5584158416;
+            --siteSubMenuCollaspedOffset: -224px;
+            display: inline-grid;
+            gap: var(--siteSubMenuNavGap);
+            grid: auto/var(--siteSubMenuNavWidth) calc(var(--siteSubMenuSectionListColumnCount)*var(--siteSubMenuSectionListColumnWidth));
+            padding: 6px;
+            border-radius: var(--cardBorderRadius);
+            background-color: var(--siteSubMenuBackgroundColor)
+        }
+
+        .SiteSubMenu .SiteNavList {
+            --siteNavListMinWidth: 220px
+        }
+
+        .SiteSubMenu.SiteSubMenu--noTransitions {
+            --siteMenuTransition: 0ms;
+            --siteSubMenuTriggerTransition: 0ms
+        }
+
+        .SiteSubMenu__navList {
+            position: relative;
+            display: grid;
+            gap: var(--siteSubMenuNavGap);
+            grid-auto-flow: row
+        }
+
+        .SiteSubMenu__navListHoverBackground {
+            position: absolute;
+            transform: translateY(var(--siteSubMenuTriggerOffsetY));
+            will-change: transform height;
+            z-index: 1;
+            width: 100%;
+            height: var(--siteSubMenuTriggerBackgroundHeight);
+            border-radius: 4px;
+            background-color: #fff
+        }
+
+        @media (prefers-reduced-motion:no-preference) {
+            .SiteSubMenu__navListHoverBackground {
+                transition: var(--siteSubMenuTriggerTransition)
+            }
+        }
+
+        .SiteSubMenu__navListHoverArrow {
+            position: absolute;
+            right: -9px;
+            transform: translateY(var(--siteSubMenuTriggerOffsetYCenter));
+            will-change: transform;
+            z-index: 1;
+            margin-top: -10px
+        }
+
+        @media (prefers-reduced-motion:no-preference) {
+            .SiteSubMenu__navListHoverArrow {
+                transition: var(--siteSubMenuTriggerTransition)
+            }
+        }
+
+        .SiteSubMenu__sectionList {
+            position: relative;
+            overflow: hidden
+        }
+
+        .SiteSubMenu__sectionListArrow {
+            position: absolute;
+            left: -1px;
+            transform: translateY(var(--siteSubMenuTriggerOffsetYCenter));
+            will-change: transform;
+            z-index: 2;
+            margin-top: -10px
+        }
+
+        @media (prefers-reduced-motion:no-preference) {
+            .SiteSubMenu__sectionListArrow {
+                transition: var(--siteSubMenuTriggerTransition);
+                transition-property: transform
+            }
+        }
+
+        .SiteSubMenu__sectionListBackground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%
+        }
+
+        .SiteSubMenu__sectionListBackgroundElement {
+            position: absolute;
+            top: 0;
+            will-change: transform;
+            z-index: 2;
+            height: 100%;
+            background-color: #fff
+        }
+
+        @media (prefers-reduced-motion:no-preference) {
+            .SiteSubMenu__sectionListBackgroundElement {
+                transition: var(--siteMenuTransition);
+                transition-property: transform
+            }
+        }
+
+        .SiteSubMenu__sectionListBackgroundElement--left {
+            left: 0;
+            width: calc(var(--siteSubMenuSectionListBackgroundRadius)*2);
+            border-top-left-radius: var(--siteSubMenuSectionListBackgroundRadius);
+            border-bottom-left-radius: var(--siteSubMenuSectionListBackgroundRadius)
+        }
+
+        .SiteSubMenu__sectionListBackgroundElement--middle {
+            left: var(--siteSubMenuSectionListBackgroundRadius);
+            transform: scaleX(1);
+            transform-origin: 0 50%;
+            z-index: 1;
+            width: calc(100% - var(--siteSubMenuSectionListBackgroundRadius)*2)
+        }
+
+        .SiteSubMenu--isCollapsed .SiteSubMenu__sectionListBackgroundElement--middle {
+            transform: scaleX(var(--siteSubMenuCollaspedScale))
+        }
+
+        .SiteSubMenu__sectionListBackgroundElement--right {
+            right: 0;
+            transform: translateX(0);
+            width: calc(var(--siteSubMenuSectionListBackgroundRadius)*2);
+            height: 100%;
+            border-top-right-radius: var(--siteSubMenuSectionListBackgroundRadius);
+            border-bottom-right-radius: var(--siteSubMenuSectionListBackgroundRadius)
+        }
+
+        .SiteSubMenu--isCollapsed .SiteSubMenu__sectionListBackgroundElement--right {
+            transform: translateX(var(--siteSubMenuCollaspedOffset))
+        }
+
+        .SiteSubMenu .SiteNavItem__link {
+            max-width: 100%
+        }
+
+        .SiteSubMenu .SiteNavItem__labelContainer {
+            flex-shrink: 1;
+            min-width: 0
+        }
+
+        .SiteSubMenu .SiteNavItem__body {
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .VariantSiteDevelopersNav__bodyLayout {
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            gap: var(--siteMenuSpacing) var(--siteMenuSpacing)
+        }
+
+        .VariantSiteDevelopersNav__bodyLayout .SiteNavList {
+            --siteNavListMinWidth: 222px
+        }
+
+        .VariantSiteDevelopersNav__header {
+            grid-area: auto/span 2
+        }
+
+        .VariantSiteDevelopersNav__footerLayout {
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            -moz-column-gap: var(--siteMenuSpacing);
+            column-gap: var(--siteMenuSpacing)
+        }
+
+        .VariantSiteDevelopersNav__footerLayout .SiteNavList {
+            --siteNavListMinWidth: 222px
+        }
+
+        .VariantSiteDevelopersNav__footerLayout .SiteNavList .SiteNavItem {
+            --siteNavListSpacing: 8px
+        }
+
+        .VariantSiteCompanyNav__bodyLayout {
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            -moz-column-gap: var(--siteMenuSpacing);
+            column-gap: var(--siteMenuSpacing)
+        }
+
+        .VariantSiteCompanyNav__bodyLayout .SiteNavList {
+            --siteNavListMinWidth: 200px
+        }
+
+        .VariantSiteCompanyNav__bodyLayout .SiteNavList .SiteNavItem {
+            --siteNavListSpacing: 8px
+        }
+
+        .VariantSiteCompanyNav__footerLayout {
+            --siteMenuSpacing: 16px;
+            display: inline-grid;
+            grid: auto/repeat(2, 1fr);
+            -moz-column-gap: var(--siteMenuSpacing);
+            column-gap: var(--siteMenuSpacing)
+        }
+
+        .VariantSiteCompanyNav__footerLayout .SiteNavList {
+            --siteNavListMinWidth: 200px
+        }
+
+        .VariantSiteCompanyNav__footerLayout .SiteNavList .SiteNavItem {
+            --siteNavListSpacing: 8px
+        }
+
+        .HomepageHero.Section {
+            --sectionPaddingTopMax: 116
+        }
+
+        @media (max-width:899px) {
+            .HomepageHero.Section {
+                --sectionPaddingBottomMax: calc(var(--sectionPaddingNormalMax) + 40)
+            }
+        }
+
+        @media (max-width:599px) {
+            .HomepageHero__graphic {
+                display: none
+            }
+        }
+
+        .HomepageHero__cta {
+            will-change: opacity
+        }
+
+        .Copy {
+            --paddingLeft: var(--columnPaddingNormal);
+            --paddingRight: var(--columnPaddingMedium);
+            --headerPaddingLeft: var(--paddingLeft);
+            --headerPaddingRight: var(--paddingRight);
+            --headerMaxWidth: var(--copyMaxWidth);
+            --bodyPaddingLeft: var(--paddingLeft);
+            --bodyPaddingRight: var(--paddingRight);
+            --bodyMaxWidth: var(--copyMaxWidth);
+            --footerPaddingLeft: var(--paddingLeft);
+            --footerPaddingRight: var(--paddingLeft);
+            --footerRowGap: var(--rowGapMedium);
+            --ctaSpacing: 16px;
+            --footerGap: "";
+            scroll-margin-top: var(--fixedNavScrollMargin)
+        }
+
+        .Copy--accented {
+            --titleColor: var(--accentColor)
+        }
+
+        .Copy.variant--Hero {
+            --titleFontSize: 48px;
+            --titleLineHeight: 56px;
+            --titleLetterSpacing: -0.02em
+        }
+
+        .Copy.variant--Hero,
+        .Copy.variant--Superhero {
+            --rowGap: var(--rowGapLarge);
+            --titleWeight: var(--fontWeightBold);
+            --paragraphGap: 20px
+        }
+
+        .Copy.variant--Section {
+            --titleFontSize: 34px;
+            --titleLineHeight: 1.294117647;
+            --titleLetterSpacing: -0.1px
+        }
+
+        .Copy.variant--Section,
+        .Copy.variant--Subsection {
+            --paddingRight: var(--columnPaddingXLarge);
+            --rowGap: var(--rowGapMedium);
+            --titleWeight: var(--fontWeightBold);
+            --paragraphGap: 20px
+        }
+
+        .Copy.variant--Subsection {
+            --titleFontSize: 24px;
+            --titleLineHeight: 1.333333333;
+            --titleLetterSpacing: 0.1px
+        }
+
+        .Copy.variant--Footer {
+            --paddingRight: var(--columnPaddingXLarge);
+            --rowGap: var(--rowGapMedium);
+            --paragraphGap: 20px
+        }
+
+        .Copy.variant--Footer,
+        .Copy.variant--Stat {
+            --titleFontSize: 24px;
+            --titleLineHeight: 1.333333333;
+            --titleWeight: var(--fontWeightBold);
+            --titleLetterSpacing: 0.1px
+        }
+
+        .Copy.variant--Detail,
+        .Copy.variant--Stat {
+            --rowGap: var(--rowGapNormal);
+            --titleBorderColor: var(--accentColor);
+            --bodyFontSize: 15px;
+            --bodyLineHeight: 1.6
+        }
+
+        .Copy.variant--Detail {
+            --titleFontSize: 15px;
+            --titleLineHeight: 1.6;
+            --titleWeight: var(--fontWeightSemibold);
+            --titleLetterSpacing: 0.2px;
+            --paragraphGap: 8px
+        }
+
+        @media (min-width:600px) {
+            .Copy.variant--Subsection {
+                --titleFontSize: 26px;
+                --titleLineHeight: 1.384615385;
+                --titleLetterSpacing: 0
+            }
+        }
+
+        @media (min-width:1112px) {
+            .Copy.variant--Hero {
+                --titleFontSize: 56px;
+                --titleLineHeight: 68px
+            }
+
+            .Copy.variant--Section {
+                --titleFontSize: 38px;
+                --titleLineHeight: 1.263157895;
+                --titleLetterSpacing: -0.2px
+            }
+        }
+
+        .Copy {
+            --titleFont: var(--titleWeight) var(--titleFontSize)/var(--titleLineHeight) var(--fontFamily);
+            --captionFont: var(--fontWeightBold) var(--captionFontSize, 18px)/var(--captionLineHeight, 1.555555556) var(--fontFamily);
+            --bodyFont: var(--fontWeightNormal) var(--bodyFontSize, 18px)/var(--bodyLineHeight, 1.555555556) var(--fontFamily);
+            letter-spacing: .2px
+        }
+
+        .Copy,
+        .Copy__header {
+            display: grid;
+            row-gap: var(--rowGap)
+        }
+
+        .Copy__header {
+            position: relative;
+            padding: 0 var(--headerPaddingRight) 0 var(--headerPaddingLeft);
+            max-width: var(--headerMaxWidth)
+        }
+
+        .Copy__icon {
+            min-height: 40px;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: var(--rowGap)
+        }
+
+        .Copy__caption {
+            font: var(--captionFont);
+            color: var(--accentColor)
+        }
+
+        html[lang^=ja] .Copy__caption {
+            font-weight: 600;
+            font-variation-settings: "wght"
+        }
+
+        .Copy__title {
+            position: relative;
+            font: var(--titleFont);
+            color: var(--titleColor);
+            letter-spacing: var(--titleLetterSpacing, inherit)
+        }
+
+        html[lang^=ja] .Copy__title {
+            font-weight: 600;
+            font-variation-settings: "wght"
+        }
+
+        .Copy__title:before {
+            display: var(--titleAnchorDisplay, block);
+            position: absolute;
+            top: calc(.5px + var(--titleLineHeight)*var(--titleFontSize)/2 - var(--titleFontSize)/2);
+            left: calc(var(--headerPaddingLeft)*-1);
+            width: 1px;
+            height: var(--titleFontSize);
+            background-color: var(--titleBorderColor, transparent);
+            content: ""
+        }
+
+        .Copy__title .Badge {
+            position: relative;
+            top: -3px;
+            margin-left: 2px
+        }
+
+        .variant--Detail .Copy__title .Badge {
+            top: -1px
+        }
+
+        .Copy__body.variant--Detail {
+            --bodyFont: var(--fontWeightNormal) 15px/1.6 var(--fontFamily)
+        }
+
+        .Copy__body {
+            padding: 0 var(--bodyPaddingRight) 0 var(--bodyPaddingLeft);
+            font: var(--bodyFont);
+            color: var(--textColor);
+            max-width: var(--bodyMaxWidth)
+        }
+
+        .Copy__body p+p {
+            margin-top: var(--paragraphGap)
+        }
+
+        .Copy__footer {
+            display: grid;
+            grid-auto-columns: minmax(0, 1fr);
+            row-gap: var(--footerRowGap);
+            margin-top: calc(var(--footerGap, var(--rowGap)) - var(--rowGap));
+            padding: 0 var(--footerPaddingRight) 0 var(--footerPaddingLeft)
+        }
+
+        .Copy__footer>.CtaButton,
+        .Copy__footer>.CtaLink {
+            justify-self: flex-start
+        }
+
+        .Copy__footer>.List[data-column-count="2"] {
+            max-width: calc(var(--columnWidth)*2)
+        }
+
+        .Copy__footer>.CopyBody--anchored {
+            margin-left: calc(var(--columnPaddingNormal)*-1)
+        }
+
+        .Copy__ctaContainer {
+            display: flex;
+            align-items: center
+        }
+
+        @media (max-width:899px) {
+            .Copy__ctaContainer {
+                flex-wrap: wrap
+            }
+        }
+
+        .Copy__ctaContainer>.CtaButton:first-of-type,
+        .Copy__ctaContainer>.CtaButton:last-of-type {
+            margin-bottom: 16px
+        }
+
+        .Copy__ctaContainer>.CtaButton:first-of-type:last-of-type {
+            margin-bottom: 0
+        }
+
+        .Copy__ctaContainer>.CtaButton:not(:first-of-type) {
+            margin-left: var(--ctaSpacing)
+        }
+
+        .HomepageHeroHeader {
+            --titleFontMin: 50;
+            --titleFontMax: 78;
+            --viewportMin: var(--viewportWidthSmall);
+            --viewportMax: var(--viewportWidthMedium);
+            --titleFontSize: calc(var(--titleFontMin)*1px + (var(--titleFontMax) - var(--titleFontMin))*(var(--windowWidth) - var(--viewportMin)*1px)/(var(--viewportMax) - var(--viewportMin)));
+            ;
+            --titleLineHeight: 1.04;
+            --titleLetterSpacing: -0.04em;
+            --titleWeight: var(--fontWeightBold);
+            --titleFont: var(--titleWeight) var(--titleFontSize)/var(--titleLineHeight) var(--fontFamily);
+            --headerMarginTop: 100px;
+            --headerPadding: 0 var(--headerPaddingRight) 0 var(--headerPaddingLeft);
+            --captionHeight: 25px;
+            --captionTitleGap: 48px;
+            --captionMarginTop: calc(var(--headerMarginTop) - var(--captionHeight) - var(--captionTitleGap));
+            position: relative;
+            min-width: 0;
+            padding: var(--headerPadding)
+        }
+
+        .MktRoot[lang*=fr] .HomepageHeroHeader {
+            --titleFontMin: 40;
+            --titleFontMax: 68
+        }
+
+        .MktRoot[lang*=ja] .HomepageHeroHeader {
+            --titleFontMin: 34;
+            --titleFontMax: 62
+        }
+
+        @media (min-width:600px) {
+            .HomepageHeroHeader {
+                --headerPaddingRight: var(--columnPaddingNone);
+                --titleFontMin: 60;
+                --titleFontMax: 94;
+                --viewportMin: var(--viewportWidthMedium);
+                --viewportMax: var(--viewportWidthLarge)
+            }
+
+            .MktRoot[lang*=fr] .HomepageHeroHeader {
+                --titleFontMin: 36;
+                --titleFontMax: 72
+            }
+
+            .MktRoot[lang*=ja] .HomepageHeroHeader {
+                --titleFontMin: 40;
+                --titleFontMax: 66
+            }
+        }
+
+        @media (min-width:1112px) {
+            .HomepageHeroHeader {
+                --titleFontSize: 94px
+            }
+
+            .MktRoot[lang*=fr] .HomepageHeroHeader {
+                --titleFontSize: 72px
+            }
+
+            .MktRoot[lang*=ja] .HomepageHeroHeader {
+                --titleFontSize: 66px
+            }
+        }
+
+        .HomepageHeroHeader__caption {
+            margin-top: var(--captionMarginTop)
+        }
+
+        @media (min-width:600px) {
+            .HomepageHeroHeader__caption {
+                min-width: calc(100% + 100px)
+            }
+        }
+
+        .HomepageHeroHeader__title {
+            margin-top: var(--headerMarginTop);
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            font: var(--titleFont);
+            color: #bdc6d2;
+            letter-spacing: var(--titleLetterSpacing, inherit)
+        }
+
+        .HomepageHeroHeader--hasCaption .HomepageHeroHeader__title {
+            margin-top: var(--captionTitleGap)
+        }
+
+        @media (min-width:600px) {
+            .HomepageHeroHeader__title {
+                min-width: calc(100% + 100px);
+                min-height: 200px
+            }
+        }
+
+        html[lang^=ja] .HomepageHeroHeader__title {
+            font-weight: 600;
+            font-variation-settings: "wght"
+        }
+
+        .HomepageHeroHeader__title--overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: var(--headerPadding);
+            z-index: 2;
+            color: #3a3a3a;
+            opacity: .3
+        }
+
+        .HomepageHeroHeader__title--burn {
+            mix-blend-mode: color-burn;
+            opacity: 1
+        }
+
+        .HomepageHeroCaption__container {
+            display: inline-flex;
+            position: relative;
+            padding: 3px 8px 4px 12px;
+            border-radius: 12.5px;
+            font: var(--fontWeightNormal) 13px/18px var(--fontFamily);
+            letter-spacing: .2px;
+            color: var(--knockoutColor)
+        }
+
+        .HomepageHeroCaption__container:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: #121252;
+            border-radius: inherit;
+            opacity: .3;
+            mix-blend-mode: multiply;
+            content: ""
+        }
+
+        @media (max-width:749px) {
+            .HomepageHeroCaption__container {
+                padding: 8px 12px 9px 12px;
+                border-radius: 4px;
+                margin-top: 8px;
+                margin-left: 25px;
+            }
+        }
+
+        @media (min-width:750px) {
+            .HomepageHeroCaption__container {
+                white-space: nowrap
+            }
+        }
+
+        .HomepageHeroCaption__content {
+            z-index: 3
+        }
+
+        .HomepageHeroCaption__title {
+            font-weight: var(--fontWeightBold)
+        }
+
+        .HomepageHeroCaption__separator {
+            margin: 0 5px 0 4px
+        }
+
+        @media (max-width:749px) {
+            .HomepageHeroCaption__separator.HomepageHeroCaption__separator--desktopOnly {
+                display: none
+            }
+        }
+
+        .HomepageHeroCaption__link.Link {
+            --linkColor: currentColor;
+            --linkHoverColor: currentColor;
+            --linkHoverOpacity: 0.6;
+            --linkOpacity: 0.9
+        }
+
+        @media (max-width:749px) {
+            .HomepageHeroCaption__link.Link {
+                display: flex;
+                align-items: center;
+                margin-top: 2px
+            }
+        }
+
+        .HomepageHeroGradient {
+            --gradientColorZero: #a960ee;
+            --gradientColorOne: #ff333d;
+            --gradientColorTwo: #90e0ff;
+            --gradientColorThree: #ffcb57;
+            --gradientColorZeroTransparent: rgba(169, 96, 238, 0);
+            --gradientColorOneTransparent: rgba(255, 51, 61, 0);
+            --gradientColorTwoTransparent: rgba(144, 224, 255, 0);
+            --gradientColorThreeTransparent: rgba(255, 203, 87, 0);
+            --gradientAngle: var(--angleStrong);
+            --gradientHeight: calc(100% + var(--sectionPaddingTop) + var(--transformOriginX)*var(--sectionAngleSin));
+            --offsetX: var(--gutterWidth);
+            --transformOriginX: -60px;
+            --sectionAngleSin: var(--angleStrongSin);
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            left: calc(var(--offsetX)*-1);
+            width: var(--windowWidth);
+            min-width: 1000px;
+            height: var(--gradientHeight);
+            transform-origin: var(--transformOriginX) 100%;
+            transform: skewY(var(--gradientAngle));
+            overflow: hidden;
+            border: none
+        }
+
+        @media (min-width:600px) {
+            .HomepageHeroGradient {
+                --transformOriginX: calc(var(--gutterWidth)*0.8)
+            }
+        }
+
+        .Gradient__canvas {
+            position: relative;
+            display: block;
+            width: inherit;
+            height: 100%;
+            opacity: 0
+        }
+
+        .Gradient__canvas.isLoaded {
+            opacity: 1;
+            transition: opacity 1.8s ease-in 50ms
+        }
+
+        .Gradient__guides {
+            --guideDashedColor: rgba(0, 0, 0, 0.3);
+            --guideSolidColor: rgba(0, 0, 0, 0.2);
+            mix-blend-mode: soft-light
+        }
+
+        .Gradient:after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(var(--gradientColorZero) 40%, var(--gradientColorTwoTransparent) 60%) -620px -180px no-repeat, radial-gradient(var(--gradientColorThree) 33%, var(--gradientColorThreeTransparent) 67%) -120px -24px no-repeat, radial-gradient(var(--gradientColorTwo) 40%, var(--gradientColorTwoTransparent) 70%) -470px 150px no-repeat, var(--gradientColorZero)
+        }
+
+        @media (min-width:600px) {
+            .Gradient:after {
+                background: radial-gradient(var(--gradientColorZero) 40%, var(--gradientColorTwoTransparent) 60%) -420px -180px no-repeat, radial-gradient(var(--gradientColorThree) 23%, var(--gradientColorThreeTransparent) 70%) 240px -24px no-repeat, radial-gradient(var(--gradientColorTwo) 30%, var(--gradientColorTwoTransparent) 70%) -270px 220px no-repeat, var(--gradientColorZero)
+            }
+        }
+
+        @media (min-width:900px) {
+            .Gradient:after {
+                background: radial-gradient(var(--gradientColorThree) 23%, var(--gradientColorThreeTransparent) 67% 100%) 385px -24px, radial-gradient(var(--gradientColorOne) 0, var(--gradientColorOneTransparent) 60% 100%) -940px 290px, radial-gradient(var(--gradientColorTwo) 10%, var(--gradientColorTwoTransparent) 60% 100%) -120px 250px, radial-gradient(var(--gradientColorOne) 40%, var(--gradientColorOneTransparent) 57% 100%) 495px -44px, radial-gradient(var(--gradientColorZero) 30%, var(--gradientColorZeroTransparent) 67% 100%) 122px -120px, radial-gradient(var(--gradientColorZero) 10%, var(--gradientColorZeroTransparent) 60% 100%) -420px 120px, radial-gradient(var(--gradientColorTwo) 15%, var(--gradientColorTwoTransparent) 50% 100%) -620px 0, radial-gradient(var(--gradientColorTwo) 25%, var(--gradientColorTwoTransparent) 50% 100%) 520px -250px, var(--gradientColorZero);
+                background-repeat: repeat-y
+            }
+        }
+
+        .Gradient.isLoaded:after {
+            transition: transform 1s 1s;
+            transform: scaleY(.995)
+        }
+
+        .HomepageHeroGraphic {
+            position: relative;
+            z-index: 2
+        }
+
+        .HomepageHeroGraphic__phone {
+            position: relative;
+            margin-top: 60px;
+            left: 140px
+        }
+
+        .HomepageHeroGraphic__dashboard {
+            position: absolute;
+            top: 0;
+            left: 230px
+        }
+
+        .DashboardGraphic {
+            --gutter: 24px;
+            display: grid;
+            grid: auto/152px 1fr;
+            gap: var(--gutter);
+            width: 929px;
+            padding: var(--gutter);
+            border-radius: 8px;
+            background: linear-gradient(hsla(0, 0%, 100%, .4), hsla(0, 0%, 100%, .3) 25%, rgba(246, 249, 252, .3) 50%, #f6f9fc 60%);
+            box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, .1), 0 50px 100px -20px rgba(50, 50, 93, .25), 0 30px 60px -30px rgba(0, 0, 0, .3);
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: .2px;
+            line-height: 14px;
+            color: #425466;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .DashboardGraphic__sidebar {
+            display: grid;
+            grid: -webkit-max-content/auto-flow -webkit-max-content;
+            grid: max-content/auto-flow max-content;
+            gap: 8px;
+            align-items: center;
+            font-weight: 620;
+            color: #fff;
+            letter-spacing: .8px;
+            text-transform: uppercase
+        }
+
+        .DashboardGraphic__toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .DashboardGraphic__box {
+            margin-top: var(--gutter);
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 2px 4px -1px rgba(6, 24, 44, .2)
+        }
+
+        .DashboardGraphic__box--search {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            height: 20px;
+            margin: 0;
+            color: #62788d
+        }
+
+        .DashboardGraphic__searchIcon {
+            width: 10px;
+            margin: 1px 5px 0 6px
+        }
+
+        .DashboardGraphic__toolbarHeading {
+            padding: 16px
+        }
+
+        .DashboardGraphic__toolbarTitle {
+            font-weight: 620
+        }
+
+        .DashboardGraphic__charts {
+            display: grid;
+            grid: auto/repeat(3, 1fr);
+            border-top: 1px solid #e6ebf1
+        }
+
+        .DashboardGraphic__column,
+        .DashboardGraphic__row {
+            padding: 15px 16px 13px
+        }
+
+        .DashboardGraphic__column:not(:first-child) {
+            border-left: 1px solid #e6ebf1
+        }
+
+        .DashboardGraphic__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .DashboardGraphic__row:not(:first-child) {
+            border-top: 1px solid #e6ebf1
+        }
+
+        .DashboardGraphic__column--large {
+            display: grid;
+            grid-column: span 2
+        }
+
+        .DashboardGraphic__chartToday,
+        .DashboardGraphic__dataToday {
+            grid-area: 1/1
+        }
+
+        .DashboardGraphic__chartToday {
+            width: 438px;
+            margin: 45px 0 1px
+        }
+
+        .DashboardGraphic__dataToday {
+            display: flex
+        }
+
+        .DashboardGraphic__chartHeading:not(:first-child) {
+            margin-left: 32px
+        }
+
+        .DashboardGraphic__chartDropdown {
+            display: grid;
+            grid: auto/auto-flow -webkit-max-content;
+            grid: auto/auto-flow max-content;
+            gap: 4px;
+            align-items: center
+        }
+
+        .DashboardGraphic__primaryData {
+            margin: 5px 0 6px;
+            font-size: 14px;
+            letter-spacing: .4px
+        }
+
+        .DashboardGraphic__primaryData--accent {
+            color: #515de1
+        }
+
+        .DashboardGraphic__mutedData {
+            color: #62788d
+        }
+
+        .DashboardGraphic__mutedData--accent {
+            font-weight: 450;
+            color: #515de1
+        }
+
+        .DashboardGraphic__chartAxis {
+            display: flex;
+            padding-top: 2px;
+            border-top: 1px solid #e6ebf1
+        }
+
+        .DashboardGraphic__axisNow {
+            margin: 0 auto 0 233px
+        }
+
+        .DashboardGraphic__column--split {
+            display: grid;
+            grid-auto-rows: 1fr;
+            padding: 0
+        }
+
+        .DashboardGraphic__toolbarFilters {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 20px;
+            margin-top: 4px
+        }
+
+        .DashboardGraphic__toolbarButton {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 5px;
+            align-items: center;
+            margin-right: 22px;
+            padding: 3px 6px;
+            font-weight: 450;
+            box-shadow: 0 0 1px 0 rgba(6, 24, 44, .18), 0 1px 2px 0 rgba(6, 24, 44, .2);
+            border-radius: 4px
+        }
+
+        .DashboardGraphic__growth {
+            display: flex
+        }
+
+        .DashboardGraphic__badge {
+            margin-left: 8px;
+            padding: 0 4px;
+            border-radius: 4px;
+            font-weight: 450;
+            color: #007e53;
+            background: #def8dd
+        }
+
+        .DashboardGraphic__badge--down {
+            color: #a54f1e;
+            background: #f6e6b9
+        }
+
+        .DashboardGraphic__chartSummary {
+            width: 202px;
+            margin: 7px 0
+        }
+
+        .HomepageIncrementPhone__imageContainer {
+            display: grid;
+            grid: 80px/56px
+        }
+
+        .HomepageIncrementPhone__image {
+            width: 46px;
+            height: 70px;
+            grid-area: 1/1;
+            border-radius: 4px;
+            box-shadow: 0 3px 6px -1px rgba(50, 50, 93, .25), 0 1px 3px 0 rgba(0, 0, 0, .2)
+        }
+
+        .HomepageIncrementPhone__image--front {
+            justify-self: end;
+            align-self: end
+        }
+
+        .CheckoutPhoneGraphic {
+            --checkoutPhoneVerticalPadding: 5px;
+            --checkoutPhoneInputMinHeight: 24px;
+            --checkoutPhoneFontSize: 11px;
+            --checkoutPhoneBackToArrowHeight: 8px
+        }
+
+        html[lang*=ja] .CheckoutPhoneGraphic {
+            --checkoutPhoneFontSize: 10px
+        }
+
+        .CheckoutPhoneGraphic {
+            height: 100%;
+            padding: 24px 16px;
+            border-radius: 28px;
+            background: #fff;
+            font-size: var(--checkoutPhoneFontSize);
+            font-weight: var(--fontWeightNormal);
+            letter-spacing: .2px
+        }
+
+        .CheckoutPhoneGraphic--scaleLarge {
+            --checkoutPhoneVerticalPadding: 8px;
+            --checkoutPhoneInputMinHeight: 28px;
+            --checkoutPhoneFontSize: 13px;
+            --checkoutPhoneBackToArrowHeight: 10px
+        }
+
+        .CheckoutPhoneGraphic--scaleLarge .CheckoutPhoneGraphic__applePay {
+            height: 16px
+        }
+
+        .CheckoutPhoneGraphic__backTo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: -10px 0 20px
+        }
+
+        .CheckoutPhoneGraphic__backToArrow {
+            margin-right: var(--checkoutPhoneBackToArrowHeight);
+            height: var(--checkoutPhoneBackToArrowHeight);
+            width: auto
+        }
+
+        .CheckoutPhoneGraphic__backTo+.CheckoutPhoneGraphic__image {
+            margin-top: 20px;
+            height: 60px
+        }
+
+        .CheckoutPhoneGraphic__image {
+            display: flex;
+            justify-content: center;
+            height: 80px
+        }
+
+        .CheckoutPhoneGraphic__description {
+            margin-top: 15px;
+            text-align: center;
+            color: #0a2540;
+            font-weight: var(--fontWeightSemibold)
+        }
+
+        .CheckoutPhoneGraphic__price {
+            margin: 2px 0 16px;
+            text-align: center
+        }
+
+        .CheckoutPhoneGraphic__button {
+            border-radius: 4px;
+            padding: var(--checkoutPhoneVerticalPadding) 0;
+            text-align: center;
+            font-weight: var(--fontWeightSemibold);
+            color: #fff;
+            background: #0a2540;
+            box-shadow: 0 2px 4px -1px rgba(50, 50, 93, .25), 0 1px 3px -1px rgba(0, 0, 0, .3)
+        }
+
+        .CheckoutPhoneGraphic__applePay {
+            display: block;
+            height: 14px;
+            margin: 0 auto
+        }
+
+        .CheckoutPhoneGraphic__separator {
+            margin: 16px 0 12px;
+            text-align: center;
+            background: linear-gradient(#e6ebf1, #e6ebf1) no-repeat 0 50%/100% 1px
+        }
+
+        .CheckoutPhoneGraphic__separatorTitle {
+            display: inline;
+            padding: 0 6px;
+            background: #fff
+        }
+
+        .CheckoutPhoneGraphic__input {
+            min-height: var(--checkoutPhoneInputMinHeight);
+            line-height: var(--checkoutPhoneInputMinHeight);
+            margin: 6px 0 16px;
+            color: #62788d;
+            border-radius: 4px;
+            box-shadow: 0 0 0 1px rgba(50, 50, 93, .07), 0 2px 3px -1px rgba(50, 50, 93, .12), 0 1px 3px -1px rgba(0, 0, 0, .12)
+        }
+
+        .CheckoutPhoneGraphic__input--card {
+            display: grid;
+            grid: auto/repeat(2, 1fr)
+        }
+
+        .CheckoutPhoneGraphic__placeholder {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-auto-flow: column;
+            padding-left: 8px
+        }
+
+        .CheckoutPhoneGraphic__placeholder--number {
+            gap: 0 6px;
+            grid-area: auto/span 2;
+            align-items: center;
+            padding-right: 6px;
+            border-bottom: 1px solid #e6ebf1
+        }
+
+        .CheckoutPhoneGraphic__placeholder--cvc {
+            padding-right: 4px;
+            border-left: 1px solid #e6ebf1;
+            white-space: nowrap
+        }
+
+        .CheckoutPhoneGraphic__cvcIcon {
+            margin: 4px 0 0 4px
+        }
+
+        .CheckoutPhoneGraphic__input--country {
+            margin-bottom: 24px
+        }
+
+        .CheckoutPhoneGraphic__placeholder--country {
+            align-items: center;
+            padding-right: 9px;
+            border-bottom: 1px solid #e6ebf1
+        }
+
+        .ApplePaySheet {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0
+        }
+
+        .ApplePaySheet--isHidden .ApplePaySheet__overlay,
+        .ApplePaySheet--isHidden .ApplePaySheet__sheet {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .ApplePaySheet--isHidden .ApplePaySheet__overlay .Face,
+        .ApplePaySheet--isHidden .ApplePaySheet__sheet .Face {
+            pointer-events: none
+        }
+
+        .ApplePaySheet__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #0b3055;
+            opacity: .2
+        }
+
+        .ApplePaySheet__sheet {
+            background: #fff;
+            box-shadow: 0 6px 12px -2px rgba(50, 50, 93, .12), 0 3px 7px -3px rgba(0, 0, 0, .15);
+            border-radius: 8px 8px 30px 30px;
+            position: absolute;
+            right: 4px;
+            bottom: 4px;
+            left: 4px
+        }
+
+        .ApplePaySheet__row {
+            display: grid;
+            grid: auto/54px 1fr auto;
+            gap: 16px;
+            margin-left: 12px;
+            padding: 8px 12px 8px 0;
+            border-bottom: 1px solid #e6ebf1;
+            font-size: 10px;
+            letter-spacing: .3px;
+            font-weight: 300
+        }
+
+        .ApplePaySheet__row--header {
+            grid: auto/1fr auto;
+            align-items: center;
+            font-size: 13px;
+            letter-spacing: .2px;
+            color: #2a69fe
+        }
+
+        .ApplePaySheet__checkoutInfo,
+        .ApplePaySheet__checkoutLabel {
+            text-transform: uppercase;
+            line-height: 16px
+        }
+
+        .ApplePaySheet__checkoutLabel {
+            text-align: right;
+            color: #66788f;
+            text-overflow: ellipsis;
+            overflow: hidden
+        }
+
+        .ApplePaySheet__checkoutInfo {
+            color: #425466
+        }
+
+        .ApplePaySheet__checkoutArrow {
+            width: 6px;
+            align-self: center
+        }
+
+        .ApplePaySheet__faceID {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 12px auto;
+            height: 40px
+        }
+
+        .Face {
+            cursor: pointer;
+            pointer-events: auto;
+            transform-origin: 50% 0;
+            transform: scale(.37)
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .Face.is-active {
+                --faceAnimationDisabled: none
+            }
+        }
+
+        .Face__borders {
+            width: 100px;
+            height: 100px;
+            transform-origin: 50% 50%
+        }
+
+        .is-resting.Face .Face__borders {
+            -webkit-animation: var(--faceAnimationDisabled, border-rest 1s ease-in-out forwards infinite);
+            animation: var(--faceAnimationDisabled, border-rest 1s ease-in-out forwards infinite)
+        }
+
+        .Face__border--copy path,
+        .Face__border path {
+            transition: d .2s, stroke .2s
+        }
+
+        .Face__border {
+            opacity: 1
+        }
+
+        .Face__border,
+        .Face__border--copy {
+            transition: opacity .4s;
+            transform-origin: 50%
+        }
+
+        .Face__border--copy {
+            opacity: 0
+        }
+
+        .Face path {
+            stroke: #999;
+            stroke-width: 4px;
+            fill: none;
+            stroke-linecap: round
+        }
+
+        .Face__check {
+            width: 100px;
+            height: 100px
+        }
+
+        .Face__check path {
+            stroke-linecap: square;
+            stroke-width: 6px;
+            stroke-dashoffset: 60px;
+            stroke-dasharray: 60px 60px
+        }
+
+        .Face.is-checked .Face__check path {
+            stroke-dashoffset: 0;
+            transition: .4s
+        }
+
+        .Face.is-checked .Face__phone {
+            opacity: 0 !important
+        }
+
+        .Face.is-active path,
+        .Face.is-active rect {
+            stroke: #0278fc
+        }
+
+        .Face__phone {
+            transition: .25s ease-out
+        }
+
+        .Face svg {
+            position: absolute;
+            left: 0;
+            top: 0
+        }
+
+        .Face__phoneContainer {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            transform: translateZ(0)
+        }
+
+        .Face.is-phone .Face__phone {
+            opacity: 1;
+            transform: perspective(500px) translateY(12px) rotateX(0deg);
+            -webkit-animation: var(--faceAnimationDisabled, phone-tap 2.7s ease-in-out forwards infinite .4s);
+            animation: var(--faceAnimationDisabled, phone-tap 2.7s ease-in-out forwards infinite .4s)
+        }
+
+        .Face .Face__phoneClip,
+        .Face .Face__phoneGlare,
+        .Face .Face__phoneIcon {
+            transform-origin: 50% 50%;
+            transform: translateY(0)
+        }
+
+        .Face.is-phone .Face__phoneClip,
+        .Face.is-phone .Face__phoneGlare,
+        .Face.is-phone .Face__phoneIcon {
+            transform: translateY(-76px);
+            transition: .3s ease-out
+        }
+
+        .Face path.Face__phoneGlare {
+            fill: #e7f0f9;
+            stroke: none
+        }
+
+        .Face.is-phone .Face__phoneGlare {
+            -webkit-animation: var(--faceAnimationDisabled, phone-shimmer 2.7s ease-in-out forwards infinite .4s);
+            animation: var(--faceAnimationDisabled, phone-shimmer 2.7s ease-in-out forwards infinite .4s)
+        }
+
+        .Face.is-phone .Face__features {
+            transform: perspective(500px) rotateX(-30deg) translateY(-10px);
+            transition: .3s;
+            opacity: 0
+        }
+
+        .Face__text span:first-of-type {
+            opacity: 1;
+            transition: .3s
+        }
+
+        .Face__text span:last-of-type {
+            position: absolute;
+            opacity: 0;
+            transition: .3s;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap
+        }
+
+        .Face.is-phone .Face__text span:first-of-type {
+            opacity: 0
+        }
+
+        .Face.is-phone .Face__text span:last-of-type {
+            opacity: 1
+        }
+
+        .Face.is-phone.is-checked .Face__text span {
+            opacity: 0
+        }
+
+        .Face.is-active rect {
+            stroke-width: 2.25
+        }
+
+        .Face__features {
+            transition: .3s;
+            transform-origin: 50% 50%
+        }
+
+        .Face__features.is-hidden {
+            opacity: 0
+        }
+
+        .Face__features.is-hidden .Face__eye,
+        .Face__features.is-hidden .Face__mouth {
+            transition: .2s
+        }
+
+        .Face__eye {
+            stroke-width: 5.5 !important
+        }
+
+        .Face__text {
+            position: relative;
+            margin-top: 10px;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Ubuntu, sans-serif;
+            font-size: 28px;
+            color: var(--slate5)
+        }
+
+        @-webkit-keyframes phone-tap {
+            0% {
+                transform: perspective(500px) translateY(12px) rotateX(0deg)
+            }
+
+            50% {
+                transform: perspective(500px) translateY(12px) rotateX(48deg) scale(.9)
+            }
+
+            to {
+                transform: perspective(500px) translateY(12px) rotateX(0deg)
+            }
+        }
+
+        @keyframes phone-tap {
+            0% {
+                transform: perspective(500px) translateY(12px) rotateX(0deg)
+            }
+
+            50% {
+                transform: perspective(500px) translateY(12px) rotateX(48deg) scale(.9)
+            }
+
+            to {
+                transform: perspective(500px) translateY(12px) rotateX(0deg)
+            }
+        }
+
+        @-webkit-keyframes border-rest {
+            0% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.05)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes border-rest {
+            0% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.05)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @-webkit-keyframes phone-shimmer {
+            0% {
+                transform: skewY(40deg) translateY(-66px)
+            }
+
+            50% {
+                transform: skewY(40deg) translateY(10px)
+            }
+
+            to {
+                transform: skewY(40deg) translateY(-66px)
+            }
+        }
+
+        @keyframes phone-shimmer {
+            0% {
+                transform: skewY(40deg) translateY(-66px)
+            }
+
+            50% {
+                transform: skewY(40deg) translateY(10px)
+            }
+
+            to {
+                transform: skewY(40deg) translateY(-66px)
+            }
+        }
+
+        .PhoneGraphic {
+            --phoneBorderRadius: 36px;
+            --phoneScreenBorderRadius: 33px;
+            --phoneWidth: 264px;
+            --phoneHeight: 533px;
+            width: var(--phoneWidth);
+            height: var(--phoneHeight);
+            padding: 8px;
+            border-radius: var(--phoneBorderRadius);
+            background: #f6f9fc;
+            box-shadow: 0 50px 100px -20px rgba(50, 50, 93, .25), 0 30px 60px -30px rgba(0, 0, 0, .3), inset 0 -2px 6px 0 rgba(10, 37, 64, .35);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-size: 16px
+        }
+
+        .PhoneGraphic--scaleLarge {
+            --phoneWidth: 301px;
+            --phoneHeight: 615px;
+            border-radius: 42px
+        }
+
+        .PhoneGraphic__screen {
+            position: relative;
+            height: 100%;
+            border-radius: var(--phoneScreenBorderRadius);
+            -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
+            mask-image: -webkit-radial-gradient(#fff, #000);
+            background: #fff
+        }
+
+        .ColumnLayout {
+            --columnRowGap: var(--rowGapLarge);
+            display: grid;
+            row-gap: var(--columnRowGap);
+            align-items: flex-start
+        }
+
+        .ColumnLayout--alignCenter {
+            align-items: center
+        }
+
+        .ColumnLayout--alignBottom {
+            align-items: flex-end
+        }
+
+        .ColumnLayout--alignStretch {
+            align-items: stretch
+        }
+
+        @media (min-width:600px) {
+
+            .ColumnLayout[data-columns="1,1,1"],
+            .ColumnLayout[data-columns="1,1,1,1"],
+            .ColumnLayout[data-columns="2,1"],
+            .ColumnLayout[data-columns="2,1,0"],
+            .ColumnLayout[data-columns="2,1,1"],
+            .ColumnLayout[data-columns="2,2"],
+            .ColumnLayout[data-columns="3,2"] {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:899px) {
+
+            .ColumnLayout[data-columns="1,3"]:not(.ColumnLayout--reflowDirectionLeftToRight)>:first-child,
+            .ColumnLayout[data-columns="2,2"].ColumnLayout--reflowDirectionRightToLeft>:first-child,
+            .ColumnLayout[data-columns="3,1"].ColumnLayout--reflowDirectionRightToLeft>:first-child,
+            .ColumnLayout[data-columns="3,2"].ColumnLayout--reflowDirectionRightToLeft>:first-child {
+                order: 1
+            }
+        }
+
+        @media (min-width:600px) and (max-width:899px) {
+            .ColumnLayout[data-columns-tablet="1"] {
+                grid-template-columns: 1fr
+            }
+
+            .ColumnLayout[data-columns="2,1,1"]>:first-child {
+                grid-area: 1/span 2
+            }
+        }
+
+        @media (min-width:900px) {
+            .ColumnLayout[data-columns="1,1,1"] {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .ColumnLayout[data-columns="2,1"] {
+                grid-template-columns: 2fr 1fr
+            }
+
+            .ColumnLayout[data-columns="1,1,1,1"] {
+                grid-template-columns: repeat(4, 1fr)
+            }
+
+            .ColumnLayout[data-columns="1,1"] {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .ColumnLayout[data-columns="1,3"] {
+                grid-template-columns: 1fr minmax(0, 3fr)
+            }
+
+            .ColumnLayout[data-columns="3,1"] {
+                grid-template-columns: 3fr 1fr
+            }
+
+            .ColumnLayout[data-columns="2,1,1"] {
+                grid-template-columns: 2fr repeat(2, 1fr)
+            }
+
+            .ColumnLayout[data-columns="2,1,0"] {
+                grid-template-columns: 2fr 1fr 1fr
+            }
+
+            .ColumnLayout[data-columns="1,2,1"] {
+                grid-template-columns: 1fr 2fr 1fr
+            }
+        }
+
+        @media (min-width:1112px) {
+            .ColumnLayout[data-columns="3,2"] {
+                grid-template-columns: 3fr 2fr;
+                min-width: calc(var(--columnWidth)*5)
+            }
+        }
+
+        .Section {
+            --sectionAngleSin: var(--angleNormalSin);
+            --sectionAngle: 0;
+            --sectionPaddingNormalMax: 128;
+            --sectionPaddingSmallMax: 110;
+            --sectionPaddingXSmallMax: 72;
+            --sectionPaddingMin: 72;
+            --sectionPaddingMax: var(--sectionPaddingNormalMax);
+            --sectionPaddingTopMax: var(--sectionPaddingMax);
+            --sectionPaddingBottomMax: var(--sectionPaddingMax);
+            --sectionMarginBottom: 0;
+            --sectionAngleHeight: calc(var(--windowWidth)*var(--sectionAngleSin));
+            --sectionAnglePaddingBaseMin: 100;
+            --sectionAnglePaddingBaseMax: var(--sectionPaddingMax);
+            --sectionAnglePaddingTopBaseMax: var(--sectionAnglePaddingBaseMax);
+            --sectionAnglePaddingBottomBaseMax: var(--sectionAnglePaddingBaseMax);
+            --sectionAngleMaxHeight: none;
+            --sectionOverflow: hidden;
+            --sectionTransformOrigin: 100% 0;
+            --sectionBackgroundOverflow: visible;
+            position: relative;
+            z-index: 1;
+            margin-bottom: var(--sectionMarginBottom);
+            color: var(--textColor);
+            scroll-margin-top: calc(var(--fixedNavHeight) + var(--fixedNavSpacing) - var(--sectionPaddingTop))
+        }
+
+        .Section--hasStickyNav {
+            --sectionOverflow: visible
+        }
+
+        .Section--hasBorderTop .Section__background {
+            border-top: 1px solid rgba(230, 235, 241, .52)
+        }
+
+        .Section--paddingSmall {
+            --sectionPaddingMax: var(--sectionPaddingSmallMax)
+        }
+
+        .Section--paddingXSmall {
+            --sectionPaddingMax: var(--sectionPaddingXSmallMax)
+        }
+
+        .Section {
+            --sectionAnglePaddingTopBase: calc(var(--sectionAnglePaddingBaseMin)*1px + (var(--sectionAnglePaddingTopBaseMax) - var(--sectionAnglePaddingBaseMin))*(var(--windowWidth)/737 - 0.50882px));
+            ;
+            --sectionAnglePaddingBottomBase: calc(var(--sectionAnglePaddingBaseMin)*1px + (var(--sectionAnglePaddingBottomBaseMax) - var(--sectionAnglePaddingBaseMin))*(var(--windowWidth)/737 - 0.50882px));
+            ;
+            --sectionAnglePaddingTop: calc(var(--sectionAngleHeight) + var(--sectionAnglePaddingTopBase) - var(--sectionAngleSin)*var(--gutterWidth));
+            --sectionAnglePaddingBottom: calc(var(--sectionAngleHeight) + var(--sectionAnglePaddingBottomBase) - var(--sectionAngleSin)*var(--gutterWidth));
+            --sectionPaddingTop: calc(var(--sectionPaddingMin)*1px + (var(--sectionPaddingTopMax) - var(--sectionPaddingMin))*(var(--windowWidth)/737 - 0.50882px));
+            ;
+            --sectionPaddingBottom: calc(var(--sectionPaddingMin)*1px + (var(--sectionPaddingBottomMax) - var(--sectionPaddingMin))*(var(--windowWidth)/737 - 0.50882px));
+        }
+
+        @media (max-width:375px) {
+            .Section {
+                --sectionAnglePaddingTopBase: calc(var(--sectionAnglePaddingBaseMin)*1px);
+                --sectionAnglePaddingBottomBase: calc(var(--sectionAnglePaddingBaseMin)*1px);
+                --sectionPaddingTop: calc(var(--sectionPaddingMin)*1px);
+                --sectionPaddingBottom: calc(var(--sectionPaddingMin)*1px)
+            }
+        }
+
+        @media (min-width:1112px) {
+            .Section {
+                --sectionAnglePaddingTopBase: calc(var(--sectionAnglePaddingTopBaseMax)*1px);
+                --sectionAnglePaddingBottomBase: calc(var(--sectionAnglePaddingBottomBaseMax)*1px);
+                --sectionPaddingTop: calc(var(--sectionPaddingTopMax)*1px);
+                --sectionPaddingBottom: calc(var(--sectionPaddingBottomMax)*1px)
+            }
+        }
+
+        .Section__background {
+            position: relative;
+            height: 100%;
+            max-height: var(--sectionAngleMaxHeight);
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform-origin: var(--sectionTransformOrigin);
+            transform: skewY(var(--sectionAngle));
+            background: var(--backgroundColor);
+            overflow: hidden
+        }
+
+        .Section__masked {
+            overflow: var(--sectionOverflow)
+        }
+
+        .Section__container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            min-height: var(--sectionMinHeight)
+        }
+
+        .Section__layoutContainer {
+            width: 100%;
+            max-width: var(--layoutWidth);
+            margin: 0 var(--columnPaddingNormal)
+        }
+
+        .Section__layout {
+            padding: var(--sectionPaddingTop) 0 var(--sectionPaddingBottom)
+        }
+
+        .Section--angleTop {
+            --sectionPaddingTop: var(--sectionAnglePaddingTop);
+            --sectionAngle: var(--angleNormal)
+        }
+
+        .Section--angleBottom {
+            --sectionTransformOrigin: 0 0
+        }
+
+        .Section--angleBoth,
+        .Section--angleBottom {
+            --sectionPaddingBottom: var(--sectionAnglePaddingBottom);
+            --sectionMarginBottom: calc(var(--sectionAngleHeight)*-1)
+        }
+
+        .Section--angleBoth {
+            --sectionPaddingTop: var(--sectionAnglePaddingTop);
+            --sectionAngle: var(--angleNormal)
+        }
+
+        .Section--bleed3 {
+            --sectionPaddingBottom: 0
+        }
+
+        .Section__backgroundMask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: var(--sectionBackgroundOverflow)
+        }
+
+        .Section--paddingTopNone {
+            --sectionPaddingTop: 0
+        }
+
+        .Section--paddingBottomNone {
+            --sectionPaddingBottom: 0
+        }
+
+        .UserLogoGrid {
+            --gridColumnCount: 2;
+            --gridRowGap: 60px;
+            display: grid;
+            grid: auto/repeat(var(--gridColumnCount), 1fr);
+            justify-items: center;
+            align-items: center;
+            row-gap: var(--gridRowGap)
+        }
+
+        @media (min-width:672px) {
+            .UserLogoGrid {
+                --gridColumnCount: 4
+            }
+        }
+
+        .TrackingSandbox {
+            width: 1px;
+            height: 1px;
+            position: fixed;
+            visibility: hidden;
+            pointer-events: none
+        }
+
+        .AnimationPane {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 99999999
+        }
+    </style>
+    <link rel="preload" href="/files/assets/fonts/d5dd9f5d.woff2" as="font" crossorigin>
+    <style>
+        @media (min-width:600px) {
+            @font-face {
+                font-family: sohne-var;
+                src: url(https://b.stripecdn.com/mkt-statics-srv/assets/d5dd9f5d.woff2) format("woff2-variations");
+                font-weight: 1 1000;
+                font-display: block;
+                unicode-range: U+0000-007e
+            }
+
+            @font-face {
+                font-family: sohne-var;
+                src: url(https://b.stripecdn.com/mkt-statics-srv/assets/c6e75166.woff2) format("woff2-variations");
+                font-weight: 1 1000;
+                font-display: block;
+                unicode-range: U+007f-ffff
+            }
+
+            @font-face {
+                font-family: SourceCodePro;
+                src: url(https://b.stripecdn.com/mkt-statics-srv/assets/1a930247.woff2) format("woff2"), url(https://b.stripecdn.com/mkt-statics-srv/assets/ac6713d5.woff) format("woff");
+                font-weight: 500;
+                font-style: normal;
+                font-display: block
+            }
+        }
+
+        @media (max-width:599px) {
+            @font-face {
+                font-family: sohne-var;
+                src: url(/files/assets/fonts/d5dd9f5d.woff2) format("woff2-variations");
+                font-weight: 1 1000;
+                font-display: swap;
+                unicode-range: U+0000-007e
+            }
+
+            @font-face {
+                font-family: sohne-var;
+                src: url(https://b.stripecdn.com/mkt-statics-srv/assets/c6e75166.woff2) format("woff2-variations");
+                font-weight: 1 1000;
+                font-display: swap;
+                unicode-range: U+007f-ffff
+            }
+
+            @font-face {
+                font-family: SourceCodePro;
+                src: url(https://b.stripecdn.com/mkt-statics-srv/assets/1a930247.woff2) format("woff2"), url(https://b.stripecdn.com/mkt-statics-srv/assets/ac6713d5.woff) format("woff");
+                font-weight: 500;
+                font-style: normal;
+                font-display: swap
+            }
+        }
+
+        .MktRoot {
+            --fontFamily: "sohne-var", "Helvetica Neue", "Arial", sans-serif;
+            --fontWeightLight: 200;
+            --fontWeightNormal: 300;
+            --fontWeightSemibold: 425;
+            --fontWeightBold: 500;
+            --codeFontFamily: "SourceCodePro";
+            --sourceCodeFont: 500 14px/1.714285714 var(--codeFontFamily);
+            --ctaFont: var(--fontWeightSemibold) 15px/1.6 var(--fontFamily);
+            --inputFont: var(--fontWeightNormal) 15px/1.6 var(--fontFamily);
+            --cardShadowXSmall: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+            --cardShadowSmall: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+            --cardShadowMedium: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+            --cardShadowLarge: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+            --cardShadowLargeInset: inset 0 30px 60px -12px rgba(50, 50, 93, 0.25), inset 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+            --cardShadowXLarge: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+            --cardShadowXSMallMargin: 2px;
+            --cardShadowSmallMargin: 8px;
+            --cardShadowMediumMargin: 16px;
+            --cardShadowLargeMargin: 32px;
+            --cardShadowXLargeMargin: 48px;
+            --cardBorderRadius: 8px;
+            --scrollbarOffset: 10px;
+            --angleNormal: -6deg;
+            --angleStrong: -12deg;
+            --angleNormalSin: 0.106;
+            --angleStrongSin: 0.212;
+            --fixedNavHeight: 60px;
+            --fixedNavSpacing: 48px;
+            --fixedNavScrollMargin: calc(var(--fixedNavHeight) + var(--fixedNavSpacing));
+            --hoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+            --focusBoxShadow: 0 0 0 2px #4d90fe, inset 0 0 0 2px hsla(0, 0%, 100%, 0.9)
+        }
+
+        .MktRoot *,
+        .MktRoot :after,
+        .MktRoot :before {
+            box-sizing: border-box
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .MktRoot {
+                --hoverTransition: none
+            }
+        }
+
+        .MktRoot[lang^=ja] {
+            --fontWeightNormal: 300;
+            --fontWeightSemibold: 300
+        }
+
+        .MktRoot[data-loading] :after,
+        .MktRoot[data-loading] :before,
+        .MktRoot[data-loading] :not([data-transition-in]) {
+            transition: none !important
+        }
+
+        .MktBody {
+            margin: 0;
+            font-family: var(--fontFamily);
+            font-weight: var(--fontWeightNormal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: var(--textColor);
+            background: var(--backgroundColor)
+        }
+
+        blockquote,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        pre {
+            margin: 0
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        strong {
+            font-weight: var(--fontWeightBold)
+        }
+
+        .theme--White {
+            --backgroundColor: #fff;
+            --linkColor: var(--accentColor);
+            --linkHoverColor: #0a2540;
+            --buttonColor: var(--accentColor);
+            --buttonHoverColor: #0a2540;
+            --buttonDisabledColor: #cfd7df;
+            --buttonDisabledOpacity: 0.7;
+            --knockoutColor: #fff;
+            --knockoutDisabledColor: #8898aa;
+            --guideSolidColor: rgba(66, 71, 112, 0.06);
+            --guideDashedColor: rgba(66, 71, 112, 0.09);
+            --titleColor: #0a2540;
+            --textColor: #425466;
+            --inputBackground: #f1f4f7;
+            --inputPlaceholderColor: #acb9c5;
+            --inputTextColor: #0a2540;
+            --inputErrorAccentColor: #ff5191;
+            --annotationColor: #8c9eb1;
+            --maskFadeColor: rgba(0, 0, 0, 0.4);
+            --navColor: #0a2540;
+            --navHoverColor: #0a2540;
+            --navHoverOpacity: 0.6;
+            --footerColor: #0a2540;
+            --cardBorderColor: #cbd6e0;
+            --cardBackground: #fff;
+            --subcardBackground: #f6f9fc;
+            --gridSubcardBackground: #f6f9fc;
+            --tableIconColor: #8c9eb1;
+            --stripeAccentWhite: #fff;
+            --stripeAccentLight: #e3e7ec;
+            --stripeAccentDark: #0a2540;
+            --bulletColor: #cfd7df;
+            --footnoteTextColor: #4d5b78;
+            --disclaimerTextColor: #707f98;
+            --inlineCodeTextColor: #2c3a57;
+            --inlineCodeBackground: #e6ecf2;
+            --socialLogoColor: #c4ccd8;
+            --socialLogoHoverColor: #0a2540
+        }
+
+        .theme--White.accent--Slate {
+            --accentColor: #0a2540;
+            --linkHoverOpacity: 0.6;
+            --buttonHoverOpacity: 0.6
+        }
+
+        .theme--Light {
+            --backgroundColor: #f6f9fc;
+            --linkColor: var(--accentColor);
+            --linkHoverColor: #0a2540;
+            --buttonColor: var(--accentColor);
+            --buttonHoverColor: #0a2540;
+            --buttonDisabledColor: #cfd7df;
+            --buttonDisabledOpacity: 0.7;
+            --knockoutColor: #fff;
+            --knockoutDisabledColor: #8898aa;
+            --guideSolidColor: rgba(66, 71, 112, 0.06);
+            --guideDashedColor: rgba(66, 71, 112, 0.09);
+            --titleColor: #0a2540;
+            --textColor: #425466;
+            --inputBackground: #e6ebf1;
+            --inputPlaceholderColor: #8898aa;
+            --inputTextColor: #0a2540;
+            --inputErrorAccentColor: #ff5191;
+            --annotationColor: #8c9eb1;
+            --maskFadeColor: rgba(0, 0, 0, 0.4);
+            --navColor: #0a2540;
+            --navHoverColor: #0a2540;
+            --navHoverOpacity: 0.6;
+            --footerColor: #0a2540;
+            --cardBorderColor: #cbd6e0;
+            --cardBackground: #fff;
+            --subcardBackground: #f6f9fc;
+            --gridSubcardBackground: #fff;
+            --tableIconColor: #8c9eb1;
+            --stripeAccentWhite: #fff;
+            --stripeAccentLight: #e3e7ec;
+            --stripeAccentDark: #0a2540;
+            --bulletColor: #cfd7df;
+            --footnoteTextColor: #4d5b78;
+            --disclaimerTextColor: #707f98;
+            --inlineCodeTextColor: #2c3a57;
+            --inlineCodeBackground: #dce6ee;
+            --socialLogoColor: #c4ccd8;
+            --socialLogoHoverColor: #0a2540
+        }
+
+        .theme--Light.accent--Slate {
+            --accentColor: #0a2540;
+            --linkHoverOpacity: 0.6;
+            --buttonHoverOpacity: 0.6
+        }
+
+        .theme--Dark {
+            --backgroundColor: #0a2540;
+            --linkColor: var(--accentColor);
+            --linkHoverColor: #fff;
+            --linkHoverOpacity: 1;
+            --buttonColor: var(--accentColor);
+            --buttonHoverColor: #fff;
+            --buttonDisabledColor: #6b7c93;
+            --buttonHoverOpacity: 1;
+            --buttonDisabledOpacity: 0.7;
+            --knockoutColor: #0a2540;
+            --knockoutDisabledColor: #e6ebf1;
+            --guideSolidColor: rgba(66, 71, 112, 0.3);
+            --guideDashedColor: rgba(66, 71, 112, 0.3);
+            --titleColor: #fff;
+            --textColor: #adbdcc;
+            --inputBackground: #0c2e4e;
+            --inputBackgroundAlt: #274869;
+            --inputPlaceholderColor: #b6c2cd;
+            --inputTextColor: #fff;
+            --inputErrorAccentColor: #ff5191;
+            --annotationColor: #8c9eb1;
+            --maskFadeColor: rgba(0, 0, 0, 0.4);
+            --navColor: #fff;
+            --navHoverColor: #fff;
+            --navHoverOpacity: 0.6;
+            --footerColor: #fff;
+            --cardBorderColor: #0f395e;
+            --cardBackground: #0c2e4e;
+            --subcardBackground: #1f4468;
+            --gridSubcardBackground: #1f4468;
+            --tableIconColor: #8c9eb1;
+            --stripeAccentWhite: #fff;
+            --stripeAccentLight: #fff;
+            --stripeAccentDark: #0c2e4e;
+            --bulletColor: #6b7c93;
+            --footnoteTextColor: #adbdcc;
+            --disclaimerTextColor: #707f98;
+            --inlineCodeTextColor: #fff;
+            --inlineCodeBackground: #1c4161;
+            --socialLogoColor: #707f98;
+            --socialLogoHoverColor: #fff
+        }
+
+        .theme--Dark.accent--Slate,
+        .theme--Dark .accent--Slate {
+            --accentColor: #fff
+        }
+
+        .theme--SemiDark {
+            --backgroundColor: #0d2e4f;
+            --linkColor: var(--accentColor);
+            --linkHoverColor: #fff;
+            --linkHoverOpacity: 1;
+            --buttonColor: var(--accentColor);
+            --buttonHoverColor: #fff;
+            --buttonDisabledColor: #6b7c93;
+            --buttonHoverOpacity: 1;
+            --buttonDisabledOpacity: 0.7;
+            --knockoutColor: #0a2540;
+            --knockoutDisabledColor: #e6ebf1;
+            --guideSolidColor: rgba(66, 71, 112, 0.3);
+            --guideDashedColor: rgba(66, 71, 112, 0.3);
+            --titleColor: #fff;
+            --textColor: #adbdcc;
+            --inputBackground: #0c2e4e;
+            --inputBackgroundAlt: #274869;
+            --inputPlaceholderColor: #b6c2cd;
+            --inputTextColor: #fff;
+            --inputErrorAccentColor: #ff5191;
+            --annotationColor: #8c9eb1;
+            --maskFadeColor: rgba(0, 0, 0, 0.4);
+            --navColor: #fff;
+            --navHoverColor: #fff;
+            --navHoverOpacity: 0.6;
+            --footerColor: #fff;
+            --cardBorderColor: #0f395e;
+            --cardBackground: #0c2e4e;
+            --subcardBackground: #1f4468;
+            --gridSubcardBackground: #1f4468;
+            --tableIconColor: #8c9eb1;
+            --stripeAccentWhite: #fff;
+            --stripeAccentLight: #fff;
+            --stripeAccentDark: #0c2e4e;
+            --bulletColor: #6b7c93;
+            --footnoteTextColor: #adbdcc;
+            --disclaimerTextColor: #707f98;
+            --inlineCodeTextColor: #fff;
+            --inlineCodeBackground: #1c4161;
+            --socialLogoColor: #707f98;
+            --socialLogoHoverColor: #fff
+        }
+
+        .theme--SemiDark.accent--Slate,
+        .theme--SemiDark .accent--Slate {
+            --accentColor: #fff
+        }
+
+        .theme--Transparent {
+            --backgroundColor: none;
+            --linkColor: #fff;
+            --linkHoverColor: var(--linkColor);
+            --linkHoverOpacity: 0.6;
+            --buttonColor: hsla(0, 0%, 100%, 0.2);
+            --buttonHoverColor: hsla(0, 0%, 100%, 0.4);
+            --accentColor: #fff;
+            --knockoutColor: #fff;
+            --textColor: #fff;
+            --guideSolidColor: rgba(66, 71, 112, 0.06);
+            --guideDashedColor: rgba(66, 71, 112, 0.09);
+            --titleColor: #fff;
+            --maskFadeColor: rgba(0, 0, 0, 0.4);
+            --navColor: #fff;
+            --navHoverColor: #fff;
+            --navHoverOpacity: 0.6;
+            --stripeBackground: #fff
+        }
+
+        .theme--LegacyDark,
+        .theme--LegacyLight {
+            --fontFamily: Camphor, "Open Sans", "Segoe UI", sans-serif;
+            --ctaFont: var(--fontWeightSemibold) 15px/1.6 var(--fontFamily);
+            --fontWeightBold: 600;
+            --fontWeightSemibold: 600;
+            --fontWeightNormal: 500
+        }
+
+        .theme--LegacyDark .ProductIcon--Atlas,
+        .theme--LegacyLight .ProductIcon--Atlas {
+            --iconHoverLightColor: #fcd669;
+            --iconHoverDarkColor: #ce7c3a
+        }
+
+        .theme--LegacyDark .ProductIcon--Billing,
+        .theme--LegacyLight .ProductIcon--Billing {
+            --iconHoverLightColor: #74e4a2;
+            --iconHoverDarkColor: #159570
+        }
+
+        .theme--LegacyDark .ProductIcon--Connect,
+        .theme--LegacyDark .ProductIcon--Payouts,
+        .theme--LegacyLight .ProductIcon--Connect,
+        .theme--LegacyLight .ProductIcon--Payouts {
+            --iconHoverLightColor: #68d4f8;
+            --iconHoverDarkColor: #217ab7
+        }
+
+        .theme--LegacyDark .ProductIcon--Capital,
+        .theme--LegacyDark .ProductIcon--CorporateCard,
+        .theme--LegacyDark .ProductIcon--Issuing,
+        .theme--LegacyDark .ProductIcon--Payments,
+        .theme--LegacyDark .ProductIcon--Terminal,
+        .theme--LegacyLight .ProductIcon--Capital,
+        .theme--LegacyLight .ProductIcon--CorporateCard,
+        .theme--LegacyLight .ProductIcon--Issuing,
+        .theme--LegacyLight .ProductIcon--Payments,
+        .theme--LegacyLight .ProductIcon--Terminal {
+            --iconHoverLightColor: #87bbfd;
+            --iconHoverDarkColor: #555abf
+        }
+
+        .theme--LegacyDark .ProductIcon--Radar,
+        .theme--LegacyLight .ProductIcon--Radar {
+            --iconHoverLightColor: #f6a4eb;
+            --iconHoverDarkColor: #9251ac
+        }
+
+        .theme--LegacyDark .ProductIcon--Sigma,
+        .theme--LegacyLight .ProductIcon--Sigma {
+            --iconHoverLightColor: #beb0f4;
+            --iconHoverDarkColor: #7356b6
+        }
+
+        .theme--LegacyLight {
+            --backgroundColor: #f6f9fc;
+            --linkColor: var(--accentColor);
+            --linkHoverColor: #0a2540;
+            --buttonColor: none;
+            --buttonHoverColor: none;
+            --buttonDisabledColor: none;
+            --knockoutColor: #32325d;
+            --knockoutDisabledColor: #8898aa;
+            --guideSolidColor: rgba(66, 71, 112, 0.06);
+            --guideDashedColor: rgba(66, 71, 112, 0.09);
+            --titleColor: #0a2540;
+            --textColor: #425466;
+            --inputBackground: #fff;
+            --inputPlaceholderColor: #acb9c5;
+            --annotationColor: #8c9eb1;
+            --maskFadeColor: rgba(0, 0, 0, 0.4);
+            --navColor: #32325d;
+            --navHoverColor: #32325d;
+            --navHoverOpacity: 0.6;
+            --footerColor: #0a2540;
+            --cardBorderColor: #cbd6e0;
+            --cardBackground: #fff;
+            --subcardBackground: #f6f9fc;
+            --stripeBackground: #0a2540
+        }
+
+        .theme--LegacyLight.accent--Slate {
+            --accentColor: #0a2540;
+            --linkHoverOpacity: 0.6;
+            --buttonHoverOpacity: 0.6
+        }
+
+        .theme--LegacyDark {
+            --backgroundColor: #0a2540;
+            --linkColor: var(--accentColor);
+            --linkHoverColor: #fff;
+            --linkHoverOpacity: 1;
+            --buttonColor: none;
+            --buttonHoverColor: none;
+            --buttonDisabledColor: none;
+            --buttonHoverOpacity: 0.6;
+            --knockoutColor: #fff;
+            --knockoutDisabledColor: #e6ebf1;
+            --guideSolidColor: rgba(66, 71, 112, 0.3);
+            --guideDashedColor: rgba(66, 71, 112, 0.3);
+            --titleColor: #fff;
+            --textColor: #adbdcc;
+            --inputBackground: #0c2e4e;
+            --inputPlaceholderColor: #b6c2cd;
+            --annotationColor: #8c9eb1;
+            --maskFadeColor: rgba(0, 0, 0, 0.4);
+            --navColor: #fff;
+            --navHoverColor: #fff;
+            --navHoverOpacity: 0.6;
+            --footerColor: #fff;
+            --cardBorderColor: #0f395e;
+            --cardBackground: #0c2e4e;
+            --subcardBackground: #1f4468;
+            --stripeBackground: #fff
+        }
+
+        .theme--LegacyDark.accent--Slate,
+        .theme--LegacyDark.flavor--Slate.accent--Slate {
+            --accentColor: #fff;
+            --linkHoverOpacity: 0.6;
+            --buttonHoverOpacity: 0.6
+        }
+
+        .flavor--Chroma {
+            --blendBackground: #80e9ff;
+            --blendIntersection: #0048e5;
+            --blendForeground: #7a73ff;
+            --gradientColorZero: #a960ee;
+            --gradientColorOne: #ff333d;
+            --gradientColorTwo: #90e0ff;
+            --gradientColorThree: #ffcb57;
+            --gradientColorZeroTransparent: rgba(169, 96, 238, 0);
+            --gradientColorOneTransparent: rgba(255, 51, 61, 0);
+            --gradientColorTwoTransparent: rgba(144, 224, 255, 0);
+            --gradientColorThreeTransparent: rgba(255, 203, 87, 0);
+            --shadeOneColor: #02bcf5;
+            --shadeTwoColor: #0073e6;
+            --shadeThreeColor: #003ab9;
+            --shadeFourColor: #635bff;
+            --shadeFiveColor: #002c59;
+            --shadeSixColor: #09cbcb
+        }
+
+        .flavor--Chroma.theme--Dark,
+        .flavor--Chroma .theme--Dark {
+            --blendForeground: #7a73ff;
+            --blendIntersection: #cff;
+            --blendBackground: #00d4ff
+        }
+
+        .flavor--Chroma.accent--Cyan,
+        .flavor--Chroma .accent--Cyan {
+            --accentColor: #02bcf5
+        }
+
+        .flavor--Chroma.theme--Dark.accent--Cyan,
+        .flavor--Chroma.theme--Dark .accent--Cyan,
+        .flavor--Chroma .theme--Dark.accent--Cyan {
+            --accentColor: #00d4ff
+        }
+
+        .flavor--Chroma.accent--Blurple,
+        .flavor--Chroma .accent--Blurple {
+            --accentColor: #635bff
+        }
+
+        .flavor--Chroma.theme--Dark.accent--Blurple,
+        .flavor--Chroma.theme--Dark .accent--Blurple {
+            --accentColor: #7a73ff
+        }
+
+        .flavor--Chroma.accent--Blue,
+        .flavor--Chroma .accent--Blue {
+            --accentColor: #0073e6
+        }
+
+        .flavor--Chroma.accent--Slate,
+        .flavor--Chroma .accent--Slate {
+            --accentColor: #0a2540
+        }
+
+        .flavor--Chroma.theme--Dark.accent--Slate,
+        .flavor--Chroma.theme--Dark .accent--Slate,
+        .flavor--Chroma .theme--Dark.accent--Slate {
+            --accentColor: #fff
+        }
+
+        .flavor--CottonCandy {
+            --blendBackground: #ff80ff;
+            --blendIntersection: #003dc1;
+            --blendForeground: #0073e6;
+            --gradientColorZero: #45dfff;
+            --gradientColorOne: #2aa1ff;
+            --gradientColorTwo: #4536ff;
+            --gradientColorThree: #ff79f6;
+            --gradientColorZeroTransparent: rgba(69, 223, 255, 0);
+            --gradientColorOneTransparent: rgba(42, 161, 255, 0);
+            --gradientColorTwoTransparent: rgba(69, 54, 255, 0);
+            --gradientColorThreeTransparent: rgba(255, 121, 246, 0)
+        }
+
+        .flavor--CottonCandy.theme--Dark,
+        .flavor--CottonCandy .theme--Dark {
+            --blendBackground: #0073e6;
+            --blendIntersection: #fac7ff;
+            --blendForeground: #ff80ff
+        }
+
+        .flavor--CottonCandy.accent--Pink,
+        .flavor--CottonCandy .accent--Pink {
+            --accentColor: #f363f3
+        }
+
+        .flavor--CottonCandy.theme--Dark.accent--Pink,
+        .flavor--CottonCandy.theme--Dark .accent--Pink {
+            --accentColor: #ff83ff
+        }
+
+        .flavor--CottonCandy.accent--Cyan,
+        .flavor--CottonCandy .accent--Cyan {
+            --accentColor: #02bcf5
+        }
+
+        .flavor--CottonCandy.theme--Dark.accent--Cyan,
+        .flavor--CottonCandy.theme--Dark .accent--Cyan {
+            --accentColor: #09d6ff
+        }
+
+        .flavor--CottonCandy.accent--Blurple,
+        .flavor--CottonCandy .accent--Blurple {
+            --accentColor: #6061f6
+        }
+
+        .flavor--LemonLime {
+            --blendBackground: #ffd848;
+            --blendIntersection: #00a600;
+            --blendForeground: #00d924;
+            --gradientColorZero: #1dcb5d;
+            --gradientColorOne: #ffa832;
+            --gradientColorTwo: #ffa832;
+            --gradientColorThree: #ffe85e;
+            --gradientColorZeroTransparent: rgba(29, 203, 93, 0);
+            --gradientColorOneTransparent: rgba(255, 168, 50, 0);
+            --gradientColorTwoTransparent: rgba(255, 168, 50, 0);
+            --gradientColorThreeTransparent: rgba(255, 232, 94, 0)
+        }
+
+        .flavor--LemonLime.theme--Dark,
+        .flavor--LemonLime .theme--Dark {
+            --blendBackground: #00d924;
+            --blendIntersection: #fff5ad;
+            --blendForeground: #ffd848
+        }
+
+        .flavor--LemonLime.accent--Green,
+        .flavor--LemonLime .accent--Green {
+            --accentColor: #15be53;
+            --complimentaryColor: #fab000
+        }
+
+        .flavor--LemonLime.theme--Dark.accent--Green,
+        .flavor--LemonLime.theme--Dark .accent--Green {
+            --accentColor: #14d433
+        }
+
+        .flavor--LemonLime.accent--Yellow,
+        .flavor--LemonLime .accent--Yellow {
+            --accentColor: #eea800;
+            --complimentaryColor: #15be53
+        }
+
+        .flavor--LemonLime.theme--Dark.accent--Yellow,
+        .flavor--LemonLime.theme--Dark .accent--Yellow,
+        .flavor--LemonLime .theme--Dark.accent--Yellow {
+            --accentColor: #ffce48
+        }
+
+        .flavor--Overcast {
+            --blendBackground: #11efe3;
+            --blendIntersection: #00299c;
+            --blendForeground: #0073e6;
+            --gradientColorZero: #0073e6;
+            --gradientColorOne: #00a8ff;
+            --gradientColorTwo: #021b9c;
+            --gradientColorThree: #11efe3;
+            --gradientColorZeroTransparent: rgba(0, 115, 230, 0);
+            --gradientColorOneTransparent: rgba(0, 168, 255, 0);
+            --gradientColorTwoTransparent: rgba(2, 27, 156, 0);
+            --gradientColorThreeTransparent: rgba(47, 229, 229, 0);
+            --shadeOneColor: #009deb;
+            --shadeTwoColor: #0073e6;
+            --shadeThreeColor: #003f7f;
+            --shadeFourColor: #002c59
+        }
+
+        .flavor--Overcast.theme--Dark,
+        .flavor--Overcast .theme--Dark {
+            --blendBackground: #11efe3;
+            --blendIntersection: #b3ffff;
+            --blendForeground: #0073e6
+        }
+
+        .flavor--Overcast.accent--Blue,
+        .flavor--Overcast .accent--Blue {
+            --accentColor: #0073e6
+        }
+
+        .flavor--Overcast.accent--Cyan,
+        .flavor--Overcast .accent--Cyan,
+        .flavor--Overcast.theme--Dark.accent--Cyan,
+        .flavor--Overcast.theme--Dark .accent--Cyan {
+            --accentColor: #02bcf5
+        }
+
+        .flavor--Overcast.accent--Teal,
+        .flavor--Overcast .accent--Teal {
+            --accentColor: #00c4c4
+        }
+
+        .flavor--Overcast.theme--Dark.accent--Teal,
+        .flavor--Overcast.theme--Dark .accent--Teal {
+            --accentColor: #0de4e4
+        }
+
+        .flavor--Perennial {
+            --blendBackground: #ff80ff;
+            --blendIntersection: #003dc1;
+            --blendForeground: #0073e6;
+            --gradientColorZero: #45dfff;
+            --gradientColorOne: #2aa1ff;
+            --gradientColorTwo: #4536ff;
+            --gradientColorThree: #a755fa;
+            --gradientColorZeroTransparent: rgba(69, 223, 255, 0);
+            --gradientColorOneTransparent: rgba(42, 161, 255, 0);
+            --gradientColorTwoTransparent: rgba(69, 54, 255, 0);
+            --gradientColorThreeTransparent: rgba(167, 85, 250, 0)
+        }
+
+        .flavor--Perennial.theme--Dark,
+        .flavor--Perennial .theme--Dark {
+            --blendBackground: #0073e6;
+            --blendIntersection: #fac7ff;
+            --blendForeground: #ff80ff
+        }
+
+        .flavor--Perennial.accent--Blurple,
+        .flavor--Perennial .accent--Blurple {
+            --accentColor: #635bff
+        }
+
+        .flavor--Perennial.theme--Dark.accent--Blurple,
+        .flavor--Perennial.theme--Dark .accent--Blurple {
+            --accentColor: #7a73ff
+        }
+
+        .flavor--Perennial.accent--Cyan,
+        .flavor--Perennial .accent--Cyan {
+            --accentColor: #02bcf5
+        }
+
+        .flavor--Perennial.theme--Dark.accent--Cyan,
+        .flavor--Perennial.theme--Dark .accent--Cyan {
+            --accentColor: #09d6ff
+        }
+
+        .flavor--Pomegranate {
+            --blendBackground: #ff5996;
+            --blendIntersection: #6e00f5;
+            --blendForeground: #96f;
+            --gradientColorZero: #a54ddd;
+            --gradientColorOne: #ff80ff;
+            --gradientColorTwo: #ffb422;
+            --gradientColorThree: #fe94d4;
+            --gradientColorZeroTransparent: rgba(255, 89, 150, 0);
+            --gradientColorOneTransparent: rgba(255, 128, 255, 0);
+            --gradientColorTwoTransparent: rgba(255, 180, 34, 0);
+            --gradientColorThreeTransparent: rgba(254, 148, 212, 0);
+            --shadeOneColor: #9d46d5;
+            --shadeTwoColor: #7b58e1;
+            --shadeThreeColor: #635bff;
+            --shadeFourColor: #0a2540
+        }
+
+        .flavor--Pomegranate.theme--Dark,
+        .flavor--Pomegranate .theme--Dark {
+            --blendBackground: #ff5996;
+            --blendIntersection: #ffdcf2;
+            --blendForeground: #96f;
+            --accentColor: #ff5996
+        }
+
+        .flavor--Pomegranate.accent--Raspberry,
+        .flavor--Pomegranate .accent--Raspberry {
+            --accentColor: #ff5996
+        }
+
+        .flavor--Pomegranate.accent--Purple,
+        .flavor--Pomegranate .accent--Purple {
+            --accentColor: #96f
+        }
+
+        .flavor--Slate {
+            --blendBackground: #a4bdd2;
+            --blendIntersection: #415465;
+            --blendForeground: #657d92
+        }
+
+        .flavor--Slate.theme--Dark,
+        .flavor--Slate .theme--Dark {
+            --blendBackground: #b4d2eb;
+            --blendIntersection: #ecf6ff;
+            --blendForeground: #7995ac
+        }
+
+        .flavor--Slate.accent--Slate,
+        .flavor--Slate .accent--Slate {
+            --accentColor: #657d92
+        }
+
+        .flavor--Slate.theme--Dark.accent--Slate,
+        .flavor--Slate.theme--Dark .accent--Slate {
+            --accentColor: #b4d2eb
+        }
+
+        .flavor--Sunburst {
+            --blendBackground: #ffd848;
+            --blendIntersection: #ff7600;
+            --blendForeground: #fb0;
+            --gradientColorZero: #ff9a15;
+            --gradientColorOne: #ff7600;
+            --gradientColorTwo: #ffa829;
+            --gradientColorThree: #ffdf56;
+            --gradientColorZeroTransparent: rgba(255, 154, 21, 0);
+            --gradientColorOneTransparent: rgba(255, 118, 0, 0);
+            --gradientColorTwoTransparent: rgba(255, 168, 41, 0);
+            --gradientColorThreeTransparent: rgba(255, 223, 86, 0)
+        }
+
+        .flavor--Sunburst.theme--Dark,
+        .flavor--Sunburst .theme--Dark {
+            --blendBackground: #f70;
+            --blendIntersection: #ffea9e;
+            --blendForeground: #fb0
+        }
+
+        .flavor--Sunburst.accent--Yellow,
+        .flavor--Sunburst .accent--Yellow {
+            --accentColor: #fab000
+        }
+
+        .flavor--Sunburst.theme--Dark.accent--Yellow,
+        .flavor--Sunburst.theme--Dark .accent--Yellow {
+            --accentColor: #ffce48
+        }
+
+        .flavor--Sunburst.accent--Orange,
+        .flavor--Sunburst .accent--Orange {
+            --accentColor: #ff7600
+        }
+
+        .flavor--Sunburst.theme--Dark.accent--Orange,
+        .flavor--Sunburst.theme--Dark .accent--Orange {
+            --accentColor: #ff7c0c
+        }
+
+        .flavor--Sunset {
+            --blendBackground: #fb0;
+            --blendIntersection: #ad4ffb;
+            --blendForeground: #ff80ff
+        }
+
+        .flavor--Sunset.theme--Dark,
+        .flavor--Sunset .theme--Dark {
+            --blendBackground: #ff80ff;
+            --blendIntersection: #ffeeb2;
+            --blendForeground: #fb0
+        }
+
+        .flavor--Sunset.accent--Pink,
+        .flavor--Sunset .accent--Pink {
+            --accentColor: #f363f3
+        }
+
+        .flavor--Sunset.theme--Dark.accent--Pink,
+        .flavor--Sunset.theme--Dark .accent--Pink {
+            --accentColor: #ff83ff
+        }
+
+        .flavor--Sunset.accent--Yellow,
+        .flavor--Sunset .accent--Yellow {
+            --accentColor: #fab000
+        }
+
+        .flavor--Sunset.theme--Dark.accent--Yellow,
+        .flavor--Sunset.theme--Dark .accent--Yellow {
+            --accentColor: #ffce48
+        }
+
+        .flavor--Twilight {
+            --blendBackground: #11efe3;
+            --blendIntersection: #0048e5;
+            --blendForeground: #96f;
+            --gradientColorZero: #4436ff;
+            --gradientColorOne: #56f;
+            --gradientColorTwo: #d679ff;
+            --gradientColorThree: #11efe3;
+            --gradientColorZeroTransparent: rgba(68, 54, 255, 0);
+            --gradientColorOneTransparent: rgba(85, 102, 255, 0);
+            --gradientColorTwoTransparent: rgba(214, 121, 255, 0);
+            --gradientColorThreeTransparent: rgba(4, 255, 255, 0);
+            --shadeOneColor: #16cbe1;
+            --shadeTwoColor: #20b5e3;
+            --shadeThreeColor: #1086db;
+            --shadeFourColor: #1959e6;
+            --shadeFiveColor: #96f;
+            --shadeSixColor: #002c59;
+            --shadeSevenColor: #00c4c4
+        }
+
+        .flavor--Twilight.theme--Dark,
+        .flavor--Twilight .theme--Dark,
+        .flavor--Twilight.theme--SemiDark,
+        .flavor--Twilight .theme--SemiDark {
+            --blendBackground: #11efe3;
+            --blendIntersection: #c2ffff;
+            --blendForeground: #96f
+        }
+
+        .flavor--Twilight.accent--Purple,
+        .flavor--Twilight .accent--Purple {
+            --accentColor: #96f
+        }
+
+        .flavor--Twilight.accent--Teal,
+        .flavor--Twilight .accent--Teal {
+            --accentColor: #00c4c4
+        }
+
+        .flavor--Twilight.theme--Dark.accent--Teal,
+        .flavor--Twilight.theme--Dark .accent--Teal,
+        .flavor--Twilight .theme--Dark.accent--Teal,
+        .flavor--Twilight.theme--SemiDark.accent--Teal,
+        .flavor--Twilight.theme--SemiDark .accent--Teal,
+        .flavor--Twilight .theme--SemiDark.accent--Teal {
+            --accentColor: #0de4e4
+        }
+
+        .flavor--Wintergreen {
+            --blendBackground: #1df5e9;
+            --blendIntersection: #00a600;
+            --blendForeground: #00d924;
+            --gradientColorZero: #20d261;
+            --gradientColorOne: #1df5e9;
+            --gradientColorTwo: #00ff91;
+            --gradientColorThree: #1df5e9;
+            --gradientColorZeroTransparent: rgba(68, 54, 255, 0);
+            --gradientColorOneTransparent: rgba(85, 102, 255, 0);
+            --gradientColorTwoTransparent: rgba(214, 121, 255, 0);
+            --gradientColorThreeTransparent: rgba(4, 255, 255, 0);
+            --shadeOneColor: #16cbe1;
+            --shadeTwoColor: #20b5e3;
+            --shadeThreeColor: #1086db;
+            --shadeFourColor: #1959e6;
+            --shadeFiveColor: #96f;
+            --shadeSixColor: #002c59;
+            --shadeSevenColor: #00c4c4
+        }
+
+        .flavor--Wintergreen.theme--Dark,
+        .flavor--Wintergreen .theme--Dark {
+            --blendBackground: #00d924;
+            --blendIntersection: #cbffef;
+            --blendForeground: #1df5e9
+        }
+
+        .flavor--Wintergreen.accent--Green,
+        .flavor--Wintergreen .accent--Green {
+            --accentColor: #15be53
+        }
+
+        .flavor--Wintergreen.theme--Dark.accent--Green,
+        .flavor--Wintergreen.theme--Dark .accent--Green {
+            --accentColor: #14d433
+        }
+
+        .flavor--Wintergreen.accent--Teal,
+        .flavor--Wintergreen .accent--Teal {
+            --accentColor: #00c4c4
+        }
+
+        .flavor--Wintergreen.accent--Teal .theme--Dark,
+        .flavor--Wintergreen.theme--Dark.accent--Teal,
+        .flavor--Wintergreen.theme--Dark .accent--Teal {
+            --accentColor: #0de4e4
+        }
+
+        html {
+            --gutterWidth: 16px;
+            --scrollbarWidth: 0px;
+            --windowWidth: calc(100vw - var(--scrollbarWidth));
+            --layoutWidth: calc(var(--windowWidth) - var(--gutterWidth)*2);
+            --layoutWidthMax: 1080px;
+            --viewportWidthSmall: 375;
+            --viewportWidthMedium: 600;
+            --viewportWidthLarge: 1112;
+            --viewportScale: calc(var(--windowWidth)/var(--viewportWidthLarge));
+            --paddingTop: 160px;
+            --paddingBottom: 160px;
+            --columnPaddingNone: 0;
+            --columnPaddingSmall: 8px;
+            --columnPaddingNormal: 16px;
+            --columnPaddingMedium: 16px;
+            --columnPaddingLarge: 16px;
+            --columnPaddingXLarge: 16px;
+            --rowGapNormal: 8px;
+            --rowGapMedium: 24px;
+            --rowGapLarge: 32px;
+            --rowGapXLarge: 64px;
+            --rowGapXXLarge: 88px;
+            --rowGap: var(--rowGapNormal);
+            --columnCountMax: 1;
+            --columnWidth: calc(var(--layoutWidth)/var(--columnCountMax));
+            --columnMaxWidth: calc(var(--layoutWidthMax)*0.25);
+            --copyMaxWidth: calc(var(--columnMaxWidth)*3)
+        }
+
+        @media (min-width:600px) {
+            html {
+                --columnPaddingMedium: 32px;
+                --columnPaddingLarge: 64px;
+                --columnPaddingXLarge: 64px;
+                --columnCountMax: 2
+            }
+        }
+
+        @media (min-width:900px) {
+            html {
+                --columnPaddingXLarge: 112px;
+                --columnCountMax: 4
+            }
+        }
+
+        @media (min-width:1112px) {
+            html {
+                --layoutWidth: var(--layoutWidthMax);
+                --gutterWidth: calc(var(--windowWidth)/2 - var(--layoutWidth)/2)
+            }
+        }
+    </style>
+    <!-- manual css -->
+
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <header class="main-nav__header-one ">
+            <nav class="header-navigation stricky">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="main-nav__logo-box">
+                        <a href="index.html" class="main-nav__logo">
+                            <img src="assets/images/logo-1-2.png" width="220" alt="Awesome Image" style="margin-top: 13px;" />
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
+                            <!-- /.smpl-icon-menu --></a>
+                    </div><!-- /.logo-box -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="main-nav__main-navigation">
+                        <ul class="one-page-scroll-menu main-nav__navigation-box">
+                            <li class="current scrollToLink">
+                                <a href="#banner">Home</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#features">Features</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#pricing">Result</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#app-shots">App Screens</a>
+                            </li>
+                            <li class="scrollToLink">
+                                <a href="#testimonials">Testimonials</a>
+                            </li>
+                            <!--
+                            <li class="dropdown scrollToLink">
+                                <a href="#blog">Blog</a>
+                                <ul>
+                                    <li><a href="blog.html">Blog Page</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            -->
+                            <li class="scrollToLink">
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                    <div class="main-nav__right">
+                        <a href="https://discord.com/invite/AIBigData"
+                            class="theme--Transparent header__btn CtaButton     variant--Button     CtaButton--arrow"
+                            style="padding: 2px 20px 2px 20px">
+                            </template>
+                            <template data-mount-target=".DashboardLoginButton__label" data-mount-on-state="logged-in">
+                                Dashboard
+                            </template>
+
+                            <span class="DashboardLoginButton__label">
+                                Discord
+                            </span>&nbsp;<svg class="
+                                HoverArrow
+                                
+                                
+                            " width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                                <g fill-rule="evenodd">
+
+                                    <path class="HoverArrow__linePath" d="M0 5h7"></path>
+                                    <path class="HoverArrow__tipPath" d="M1 1l4 4-4 4"></path>
+
+                                </g>
+                            </svg>
+                        </a>
+                    </div><!-- /.main-nav__right -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        </header><!-- /.main-nav__header-one -->
+
+        <section class="banner-one" id="banner"
+            style="background-image: url(assets/images/background/banner-bg-1-1.png);">
+                <div style="z-index: 1;">
+                <img src="assets/images/shapes/banner-shapes-1-1.png" alt="" class="banner-one__shape-1">
+                <img src="assets/images/shapes/banner-shapes-1-2.png" alt="" class="banner-one__shape-2">
+
+                <img src="assets/images/shapes/banner-shapes-1-4-2.png" alt="" class="banner-one__shape-4">
+                <img src="assets/images/shapes/banner-shapes-1-4.png" alt="" class="banner-one__shape-5">
+                <img src="assets/images/shapes/banner-shapes-1-6.png" alt="" class="banner-one__shape-6">
+                <img src="assets/images/shapes/banner-shapes-1-7.png" alt="" class="banner-one__shape-7">
+                <img src="assets/images/shapes/banner-shapes-1-7-2.png" alt="" class="banner-one__shape-8">
+
+                <div class="container">
+                    <img src="assets/images/shapes/banner-shapes-1-3.png" alt="" class="banner-one__shape-moc-1">
+                    <img src="assets/images/mocs/iPhone_16.png" alt="" class="banner-one__moc">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="banner-one__content">
+                                <div class="HomepageHeroCaption HomepageHeroHeader__caption"
+                                    style="color: white !important; font-size: 0.8em">
+                                    <div class="HomepageHeroCaption__container">
+                                        <div class="HomepageHeroCaption__content">
+                                            <span class="HomepageHeroCaption__title">Lancio</span>
+                                            <span class="HomepageHeroCaption__separator">•</span>
+                                            <span class="HomepageHeroCaption__title">fino al 31 Maggio</span>
+                                            <span
+                                                class="HomepageHeroCaption__separator HomepageHeroCaption__separator--desktopOnly">•</span>
+                                            <a class="
+                                      Link
+                                      HomepageHeroCaption__link
+                                    " href="https://discord.com/invite/AIBigData" data-js-controller="AnalyticsButton"
+                                                data-analytics-category="Links" data-analytics-action="Clicked"
+                                                data-analytics-label="">Ottieni i vantaggi in modo gratuito&nbsp;<svg
+                                                    class="
+                                      HoverArrow
+                                      
+                                      
+                                    " width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                                                    <g fill-rule="evenodd">
+
+                                                        <path class="HoverArrow__linePath" d="M0 5h7"></path>
+                                                        <path class="HoverArrow__tipPath" d="M1 1l4 4-4 4"></path>
+
+                                                    </g>
+                                                </svg></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--p class="banner-one__tag-line">Welcome to SEO Business <a href="#">free trial</a></p-->
+                                <h3>Elite group <br> with ambitious goals</h3>
+                                <p>
+                                    We are committed on producing the best possible results for us and for the people
+                                    who follow us.
+                                    The first AI system for accurate Big Data analysis</p>
+                                <!-- /.thm-btn banner-one__btn -->
+                            </div><!-- /.banner-one__content -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div>
+        </section><!-- /.banner-one -->
+
+        <section class="service-one" id="features">
+            <div class="container">
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                    <p>Checkout App Features</p>
+                    <h3>The Only App You’ll Need</h3>
+                </div><!-- /.block-title -->
+                <div class="row">
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-responsive"></i>
+                            <h3>Easy to use</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-computer-graphic"></i>
+                            <h3>Mobile/Desktop Access</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-development1"></i>
+                            <h3>Shared with Users</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-development"></i>
+                            <h3>A.I. Based</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                    <div class="service-one__col wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                        <div class="service-one__single">
+                            <i class="zimed-icon-development"></i>
+                            <h3>Daily Update</h3>
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.service-one__col -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.service-one -->
+
+        <div class="cta-three">
+
+            <img src="assets/images/shapes/cta-1-shape-2.png" alt="" class="cta-three__shape-2">
+            <img src="assets/images/shapes/cta-1-shape-3.png" alt="" class="cta-three__shape-3">
+            <div class="container">
+                <img src="assets/images/shapes/cta-1-shape-1.png" alt="" class="cta-three__shape-1">
+                <img src="assets/images/mocs/cta-moc-1-1.png" alt="" class="cta-three__moc">
+                <div class="row justify-content-end">
+                    <div class="col-lg-6">
+                        <div class="cta-three__content">
+                            <div class="block-title text-left">
+                                <span class="block-title__bubbles"></span>
+                                <p>Checkout App Features</p>
+                                <h3>Control Everything From One Application</h3>
+                            </div><!-- /.block-title -->
+                            <div class="cta-three__box-wrap">
+                                <div class="cta-three__box">
+                                    <div class="cta-three__box-icon">
+                                        <i class="zimed-icon-strategy"></i>
+                                    </div><!-- /.cta-three__box-icon -->
+                                    <div class="cta-three__box-content">
+                                        <h3>Feature Here</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor anagi
+                                            icdunt ut labore et dolore magna aliqua.</p>
+                                    </div><!-- /.cta-three__box-content -->
+                                </div><!-- /.cta-three__box -->
+                                <div class="cta-three__box">
+                                    <div class="cta-three__box-icon">
+                                        <i class="zimed-icon-training"></i>
+                                    </div><!-- /.cta-three__box-icon -->
+                                    <div class="cta-three__box-content">
+                                        <h3>Feature Here</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor anagi
+                                            icdunt ut labore et dolore magna aliqua.</p>
+                                    </div><!-- /.cta-three__box-content -->
+
+                                </div><!-- /.cta-three__box -->
+                            </div><!-- /.cta-three__box-wrap -->
+                            <a href="#" class="thm-btn cta-three__btn">Discover More</a>
+                            <!-- /.thm-btn cta-three__btn -->
+                        </div><!-- /.cta-three__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.cta-three -->
+
+        <section class="cta-two">
+            <img src="assets/images/shapes/cta-2-shape-1.png" alt="" class="cta-two__shape-1">
+            <img src="assets/images/shapes/cta-2-shape-2.png" alt="" class="cta-two__shape-2">
+            <div class="container">
+                <img src="assets/images/shapes/cta-2-shape-3.png" alt="" class="cta-two__shape-3">
+                <img src="assets/images/mocs/cta-moc-2-1.png" alt="" class="cta-two__moc">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="cta-two__content">
+                            <div class="block-title text-left">
+                                <span class="block-title__bubbles"></span>
+                                <p>Checkout App Features</p>
+                                <h3>Discover the Powerful Tools For Your Repeat Customers</h3>
+                            </div><!-- /.block-title -->
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry when an unknown
+                                printer
+                                took a galley of type and scrambled it to make. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit.</p>
+                            <a href="#" class="thm-btn cta-two__btn">Discover More</a><!-- /.thm-btn cta-two__btn -->
+                        </div><!-- /.cta-two__content -->
+                    </div><!-- /.col-lg-5 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-two -->
+
+        <section class="video-one">
+            <div class="container">
+                <div class="video-one__box wow fadeInUp" data-wow-duration="1500ms">
+                    <img src="assets/images/resources/video-1-1.jpg" alt="">
+                    <div class="video-one__content">
+                        <a href="https://www.youtube.com/watch?v=aitb---aDYM" class="video-popup"><i
+                                class="fa fa-play"></i></a>
+                        <h3>Watch Our Video</h3>
+                    </div><!-- /.video-one__content -->
+                </div><!-- /.video-one__box -->
+            </div><!-- /.container -->
+        </section><!-- /.video-one -->
+
+        <section class="funfact-one">
+            <img src="assets/images/shapes/pricing-shape-1.png" alt="" class="funfact-one__shape-1">
+            <img src="assets/images/shapes/pricing-shape-2.png" alt="" class="funfact-one__shape-2">
+            <img src="assets/images/shapes/pricing-shape-3.png" alt="" class="funfact-one__shape-3">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3><span class="counter">100</span>+</h3>
+                            <p>User</p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3><span class="counter">500</span>+</h3>
+                            <p>Shared</p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3><span class="counter">10</span>+</h3>
+                            <p>Daily Review</p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="funfact-one__single">
+                            <h3><span class="counter">11</span></h3>
+                            <p>Company</p>
+                        </div><!-- /.funfact-one__single -->
+                    </div><!-- /.col-lg-3 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.funfact-one -->
+
+        <section class="pricing-one" id="pricing">
+            <div class="container">
+                <div class="pricing-one__sep"></div><!-- /.pricing-one__sep -->
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                    <p>Our Pricing Tables</p>
+                    <h3>Choose Pricing Plans</h3>
+                </div><!-- /.block-title -->
+                <ul class="list-inline text-center switch-toggler-list" role="tablist" id="switch-toggle-tab">
+                    <li class="month active"><a href="#">Monthly</a></li>
+                    <li>
+                        <!-- Rounded switch -->
+                        <label class="switch on">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                    <li class="year"><a href="#">Yearly</a></li>
+                </ul><!-- /.list-inline -->
+                <div class="tabed-content">
+                    <div id="month">
+                        <div class="row">
+                            <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner">
+                                        <img src="assets/images/shapes/pricing-line-1-1.png" alt=""
+                                            class="pricing-one__line">
+                                        <img src="assets/images/shapes/pricing-icon-1-1.png" alt=""
+                                            class="pricing-one__icon">
+                                        <h3>$20.00</h3>
+                                        <p>Basic Pack</p>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            <li><i class="fa fa-check"></i> Extra features</li>
+                                            <li><i class="fa fa-check"></i> Lifetime free support</li>
+                                            <li><i class="fa fa-check"></i> Upgrate options</li>
+                                            <li><i class="fa fa-check"></i> Full access</li>
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                        <a href="#" class="thm-btn pricing-one__btn">Get Started</a><!-- /.thm-btn -->
+                                        <span>Get a Free Trial</span>
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner">
+                                        <img src="assets/images/shapes/pricing-line-1-1.png" alt=""
+                                            class="pricing-one__line">
+                                        <img src="assets/images/shapes/pricing-icon-1-2.png" alt=""
+                                            class="pricing-one__icon">
+                                        <h3>$30.00</h3>
+                                        <p>Standard Pack</p>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            <li><i class="fa fa-check"></i> Extra features</li>
+                                            <li><i class="fa fa-check"></i> Lifetime free support</li>
+                                            <li><i class="fa fa-check"></i> Upgrate options</li>
+                                            <li><i class="fa fa-check"></i> Full access</li>
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                        <a href="#" class="thm-btn pricing-one__btn">Get Started</a><!-- /.thm-btn -->
+                                        <span>Get a Free Trial</span>
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4 wow fadeInRight" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner">
+                                        <img src="assets/images/shapes/pricing-line-1-1.png" alt=""
+                                            class="pricing-one__line">
+                                        <img src="assets/images/shapes/pricing-icon-1-3.png" alt=""
+                                            class="pricing-one__icon">
+                                        <h3>$40.00</h3>
+                                        <p>Ultimate Pack</p>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            <li><i class="fa fa-check"></i> Extra features</li>
+                                            <li><i class="fa fa-check"></i> Lifetime free support</li>
+                                            <li><i class="fa fa-check"></i> Upgrate options</li>
+                                            <li><i class="fa fa-check"></i> Full access</li>
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                        <a href="#" class="thm-btn pricing-one__btn">Get Started</a><!-- /.thm-btn -->
+                                        <span>Get a Free Trial</span>
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                        </div><!-- /.row -->
+                    </div><!-- /#month -->
+                    <div id="year">
+                        <div class="row">
+                            <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner">
+                                        <img src="assets/images/shapes/pricing-line-1-1.png" alt=""
+                                            class="pricing-one__line">
+                                        <img src="assets/images/shapes/pricing-icon-1-1.png" alt=""
+                                            class="pricing-one__icon">
+                                        <h3>$99.00</h3>
+                                        <p>Basic Pack</p>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            <li><i class="fa fa-check"></i> Extra features</li>
+                                            <li><i class="fa fa-check"></i> Lifetime free support</li>
+                                            <li><i class="fa fa-check"></i> Upgrate options</li>
+                                            <li><i class="fa fa-check"></i> Full access</li>
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                        <a href="#" class="thm-btn pricing-one__btn">Get Started</a><!-- /.thm-btn -->
+                                        <span>Get a Free Trial</span>
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner">
+                                        <img src="assets/images/shapes/pricing-line-1-1.png" alt=""
+                                            class="pricing-one__line">
+                                        <img src="assets/images/shapes/pricing-icon-1-2.png" alt=""
+                                            class="pricing-one__icon">
+                                        <h3>$199.00</h3>
+                                        <p>Standard Pack</p>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            <li><i class="fa fa-check"></i> Extra features</li>
+                                            <li><i class="fa fa-check"></i> Lifetime free support</li>
+                                            <li><i class="fa fa-check"></i> Upgrate options</li>
+                                            <li><i class="fa fa-check"></i> Full access</li>
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                        <a href="#" class="thm-btn pricing-one__btn">Get Started</a><!-- /.thm-btn -->
+                                        <span>Get a Free Trial</span>
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4 wow fadeInRight" data-wow-duration="1500ms">
+                                <div class="pricing-one__single">
+                                    <div class="pricing-one__inner">
+                                        <img src="assets/images/shapes/pricing-line-1-1.png" alt=""
+                                            class="pricing-one__line">
+                                        <img src="assets/images/shapes/pricing-icon-1-3.png" alt=""
+                                            class="pricing-one__icon">
+                                        <h3>$299.00</h3>
+                                        <p>Ultimate Pack</p>
+                                        <ul class="list-unstyled pricing-one__list">
+                                            <li><i class="fa fa-check"></i> Extra features</li>
+                                            <li><i class="fa fa-check"></i> Lifetime free support</li>
+                                            <li><i class="fa fa-check"></i> Upgrate options</li>
+                                            <li><i class="fa fa-check"></i> Full access</li>
+                                        </ul><!-- /.list-unstyled pricing-one__list -->
+                                        <a href="#" class="thm-btn pricing-one__btn">Get Started</a><!-- /.thm-btn -->
+                                        <span>Get a Free Trial</span>
+                                    </div><!-- /.pricing-one__inner -->
+                                </div><!-- /.pricing-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                        </div><!-- /.row -->
+                    </div><!-- /#year -->
+                </div><!-- /.tabed-content -->
+
+            </div><!-- /.container -->
+        </section><!-- /.pricing-one -->
+
+        <section class="app-shot-one" id="app-shots">
+            <img src="assets/images/shapes/contact-shape-3.png" alt="" class="app-shot__shape-1">
+            <img src="assets/images/shapes/contact-shape-2.png" alt="" class="app-shot__shape-2">
+
+            <div class="container-fluid">
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                    <p>Checkout App Interface</p>
+                    <h3>App Screenshots</h3>
+                </div><!-- /.block-title -->
+                <div class="app-shot-one__carousel thm__owl-carousel owl-theme owl-carousel"
+                    data-options='{ "loop": true, "margin": 43, "nav": false, "dots": true, "autoWidth": false, "autoplay": true, "smartSpeed": 700, "autoplayTimeout": 5000, "autoplayHoverPause": true, "slideBy": 5, "responsive": { "0": { "items": 1 }, "480": { "items": 2 }, "600": { "items": 3 }, "991": { "items": 4 }, "1000": { "items": 5 }, "1200": { "items": 5 } } }'>
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-1.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-2.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-3.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-4.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-5.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-1.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-2.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-3.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-4.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-5.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-1.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-2.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-3.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-4.jpg" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/app-shots/app-shot-1-5.jpg" alt="">
+                    </div><!-- /.item -->
+                </div><!-- /.app-shot-one__carousel owl-theme owl-carousel -->
+            </div><!-- /.container-fluid -->
+        </section><!-- /.app-shot-one -->
+
+        <section class="testimonials__one" id="testimonials">
+            <img src="assets/images/shapes/map-1-1.png" alt="Awesome Image" class="map-img" />
+            <img src="assets/images/shapes/testi-shape-1.png" alt="" class="testimonials__one-shape-1">
+            <img src="assets/images/shapes/testi-shape-2.png" alt="" class="testimonials__one-shape-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 d-flex">
+                        <div class="my-auto wow fadeInUp" data-wow-duration="1500ms">
+                            <div id="testimonials-slider-pager">
+                                <div class="testimonials-slider-pager-one">
+                                    <a href="#" class="pager-item active" data-slide-index="0"><img
+                                            src="assets/images/testimonials/testi-1-1.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="1"><img
+                                            src="assets/images/testimonials/testi-1-2.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="2"><img
+                                            src="assets/images/testimonials/testi-1-3.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="3"><img
+                                            src="assets/images/testimonials/testi-1-4.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="4"><img
+                                            src="assets/images/testimonials/testi-1-5.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="5"><img
+                                            src="assets/images/testimonials/testi-1-6.jpg" alt="Awesome Image" /></a>
+                                </div><!-- /.testimonials-slider-pager-one -->
+                                <div class="testimonials-slider-pager-two">
+                                    <a href="#" class="pager-item active" data-slide-index="0"><img
+                                            src="assets/images/testimonials/testi-1-1.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="1"><img
+                                            src="assets/images/testimonials/testi-1-2.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="2"><img
+                                            src="assets/images/testimonials/testi-1-3.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="3"><img
+                                            src="assets/images/testimonials/testi-1-4.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="4"><img
+                                            src="assets/images/testimonials/testi-1-5.jpg" alt="Awesome Image" /></a>
+                                    <a href="#" class="pager-item" data-slide-index="5"><img
+                                            src="assets/images/testimonials/testi-1-6.jpg" alt="Awesome Image" /></a>
+                                </div><!-- /.testimonials-slider-pager-two -->
+                            </div><!-- /#testimonials-slider-pager -->
+                        </div><!-- /.my-auto -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="block-title text-left">
+                            <span class="block-title__bubbles"></span>
+                            <p>Checkout Latest Posts</p>
+                            <h3>What Our Clients Are Saying</h3>
+                        </div><!-- /.block-title -->
+                        <ul class="slider testimonials-slider">
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    <p>This is due to their excellent service, competitive pricing and customer support.
+                                        It’s
+                                        throughly refresing to get such a personal touch. Duis aute irure dolor in
+                                        reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <h3>Delila Rayam</h3>
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    <p>This is due to their excellent service, competitive pricing and customer support.
+                                        It’s
+                                        throughly refresing to get such a personal touch. Duis aute irure dolor in
+                                        reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <h3>Terrilyn Werme</h3>
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    <p>This is due to their excellent service, competitive pricing and customer support.
+                                        It’s
+                                        throughly refresing to get such a personal touch. Duis aute irure dolor in
+                                        reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <h3>Kyle Demayo</h3>
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    <p>This is due to their excellent service, competitive pricing and customer support.
+                                        It’s
+                                        throughly refresing to get such a personal touch. Duis aute irure dolor in
+                                        reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <h3>Minta Hadad</h3>
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    <p>This is due to their excellent service, competitive pricing and customer support.
+                                        It’s
+                                        throughly refresing to get such a personal touch. Duis aute irure dolor in
+                                        reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <h3>Sherman Cibrian</h3>
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+                            <li class="slide-item">
+                                <div class="testimonials__one__single">
+                                    <p>This is due to their excellent service, competitive pricing and customer support.
+                                        It’s
+                                        throughly refresing to get such a personal touch. Duis aute irure dolor in
+                                        reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <h3>Adrianne Hagans</h3>
+                                </div><!-- /.testimonials__one__single -->
+                            </li>
+                        </ul>
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.testimonials__one -->
+
+        <section class="brand-one brand-one__home-one">
+            <div class="container">
+                <div class="brand-one__carousel owl-carousel thm__owl-carousel owl-theme"
+                    data-options='{"loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 5000, "items": 5, "dots": false, "nav": false, "margin": 100, "smartSpeed": 700, "responsive": { "0": {"items": 2, "margin": 30}, "480": {"items": 3, "margin": 30}, "991": {"items": 4, "margin": 50}, "1199": {"items": 5, "margin": 100}}}'>
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-2.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-3.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-4.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-5.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-6.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-2.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-3.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-4.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-5.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-6.png" alt="">
+                    </div><!-- /.item -->
+                </div><!-- /.brand-one__carousel owl-carousel thm__owl-carousel owl-theme -->
+            </div><!-- /.container -->
+        </section><!-- /.brand-one -->
+
+        <section class="faq-one">
+            <img src="assets/images/shapes/faq-shape-1.png" alt="" class="faq-one__shape-1">
+            <img src="assets/images/shapes/faq-shape-2.png" alt="" class="faq-one__shape-2">
+            <img src="assets/images/shapes/faq-shape-3.png" alt="" class="faq-one__shape-3">
+            <div class="container">
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                    <p>Frequently Asked Questions</p>
+                    <h3>Have any Question?</h3>
+                </div><!-- /.block-title -->
+                <div class="accrodion-grp wow fadeIn" data-wow-duration="1500ms" data-grp-name="faq-accrodion">
+                    <div class="accrodion active ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>Pre and post launch mobile app marketing pitfalls to avoid</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>There are many variations of passages of available but majority have alteration
+                                        in some
+                                        by inject humour or random words. Lorem ipsum dolor sit amet, error insolens
+                                        reprimique
+                                        no quo, ea pri verterem phaedr vel ea iisque aliquam.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+                    <div class="accrodion  ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>Pre and post launch mobile app marketing pitfalls to avoid</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>There are many variations of passages of available but majority have alteration
+                                        in some
+                                        by inject humour or random words. Lorem ipsum dolor sit amet, error insolens
+                                        reprimique
+                                        no quo, ea pri verterem phaedr vel ea iisque aliquam.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+                    <div class="accrodion ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>How to update application new features</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>There are many variations of passages of available but majority have alteration
+                                        in some
+                                        by inject humour or random words. Lorem ipsum dolor sit amet, error insolens
+                                        reprimique
+                                        no quo, ea pri verterem phaedr vel ea iisque aliquam.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+                    <div class="accrodion ">
+                        <div class="accrodion-inner">
+                            <div class="accrodion-title">
+                                <h4>How to connect with the support to improve app experience</h4>
+                            </div>
+                            <div class="accrodion-content">
+                                <div class="inner">
+                                    <p>There are many variations of passages of available but majority have alteration
+                                        in some
+                                        by inject humour or random words. Lorem ipsum dolor sit amet, error insolens
+                                        reprimique
+                                        no quo, ea pri verterem phaedr vel ea iisque aliquam.</p>
+                                </div><!-- /.inner -->
+                            </div>
+                        </div><!-- /.accrodion-inner -->
+                    </div>
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /.faq-one -->
+
+        <section class="blog-one blog-one__home" id="blog">
+            <img src="assets/images/shapes/blog-shape-1-1.png" alt="" class="blog-one__shape-1">
+            <div class="container">
+                <div class="block-title text-center">
+                    <span class="block-title__bubbles"></span>
+                    <p>Checkout Latest Posts</p>
+                    <h3>News & Articles</h3>
+                </div><!-- /.block-title -->
+                <div class="row">
+                    <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1500ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image">
+                                <img src="assets/images/blog/blog-1-1.jpg" alt="">
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <ul class="blog-one__meta list-unstyled">
+                                    <li><a href="#"><i class="far fa-clock"></i> 20 Feb</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a></li>
+                                </ul><!-- /.blog-one__meta list-unstyled -->
+                                <h3><a href="blog-details.html">Pre and post launch mobile app marketing pitfalls to
+                                        avoid</a>
+                                </h3>
+                                <a href="blog-details.html" class="blog-one__link"><i
+                                        class="zimed-icon-right-arrow"></i></a>
+                                <!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image">
+                                <img src="assets/images/blog/blog-1-2.jpg" alt="">
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <ul class="blog-one__meta list-unstyled">
+                                    <li><a href="#"><i class="far fa-clock"></i> 20 Feb</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a></li>
+                                </ul><!-- /.blog-one__meta list-unstyled -->
+                                <h3><a href="blog-details.html">It is all exactly as i said, but i don't like it let's
+                                        unpack
+                                        that</a></h3>
+                                <a href="blog-details.html" class="blog-one__link"><i
+                                        class="zimed-icon-right-arrow"></i></a>
+                                <!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 wow fadeInRight" data-wow-duration="1500ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image">
+                                <img src="assets/images/blog/blog-1-3.jpg" alt="">
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <ul class="blog-one__meta list-unstyled">
+                                    <li><a href="#"><i class="far fa-clock"></i> 20 Feb</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a></li>
+                                </ul><!-- /.blog-one__meta list-unstyled -->
+                                <h3><a href="blog-details.html">I just wanted to give you a heads-up, or this you feel
+                                        you
+                                        would</a></h3>
+                                <a href="blog-details.html" class="blog-one__link"><i
+                                        class="zimed-icon-right-arrow"></i></a>
+                                <!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.blog-one -->
+
+        <section class="contact-one" id="contact">
+            <img src="assets/images/shapes/contact-shape-1.png" alt="" class="contact-one__shape-1">
+            <img src="assets/images/shapes/contact-shape-2.png" alt="" class="contact-one__shape-2">
+            <img src="assets/images/shapes/contact-shape-3.png" alt="" class="contact-one__shape-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-one__content">
+                            <div class="contact-one__images">
+                                <img src="assets/images/resources/contact-1.jpg" class="wow fadeInUp"
+                                    data-wow-duration="1500ms" alt="">
+                                <img src="assets/images/resources/contact-2.jpg" class="wow fadeInUp"
+                                    data-wow-duration="1500ms" alt="">
+                            </div><!-- /.contact-one__images -->
+                            <div class="contact-one__infos">
+                                <div class="contact-one__infos-single">
+                                    <div class="contact-one__infos-icon">
+                                        <i class="zimed-icon-placeholder"></i>
+                                    </div><!-- /.contact-one__infos-icon -->
+                                    <div class="contact-one__infos-content">
+                                        <h3>Addresss</h3>
+                                        <p>20 Broklyn Street, New York. United States of <br> America </p>
+                                    </div><!-- /.contact-one__infos-content -->
+                                </div><!-- /.contact-one__infos-single -->
+                                <div class="contact-one__infos-single">
+                                    <div class="contact-one__infos-icon">
+                                        <i class="zimed-icon-message"></i>
+                                    </div><!-- /.contact-one__infos-icon -->
+                                    <div class="contact-one__infos-content">
+                                        <h3>Email</h3>
+                                        <p><a href="mailto:needhelp@zimed.com">needhelp@zimed.com</a></p>
+                                    </div><!-- /.contact-one__infos-content -->
+                                </div><!-- /.contact-one__infos-single -->
+                                <div class="contact-one__infos-single">
+                                    <div class="contact-one__infos-icon">
+                                        <i class="zimed-icon-phone-call"></i>
+                                    </div><!-- /.contact-one__infos-icon -->
+                                    <div class="contact-one__infos-content">
+                                        <h3>Phone</h3>
+                                        <p><a href="tel:666-888-0000">666 888 0000</a></p>
+                                    </div><!-- /.contact-one__infos-content -->
+                                </div><!-- /.contact-one__infos-single -->
+                            </div><!-- /.contact-one__infos -->
+                        </div><!-- /.contact-one__content -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="contact-one__form-wrap">
+                            <div class="block-title">
+                                <span class="block-title__bubbles"></span>
+                                <p>Contact Us Now</p>
+                                <h3>Write a Message</h3>
+                            </div><!-- /.block-title -->
+                            <form action="assets/inc/sendemail.php" class="contact-form-validated contact-one__form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" placeholder="Name">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <input type="text" name="email" placeholder="Email">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <input type="text" name="subject" placeholder="Subject">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <select name="discuss" class="selectpicker">
+                                            <option value="">Discussion For</option>
+                                            <option value="">Free Trial</option>
+                                            <option value="">Busniess Inquery</option>
+                                        </select>
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-12">
+                                        <textarea name="message" placeholder="Message"></textarea>
+                                        <button type="submit" class="thm-btn contact-one__form-btn">Send
+                                            Message</button>
+                                    </div><!-- /.col-md-12 -->
+                                </div><!-- /.row -->
+                            </form><!-- /.contact-one__form -->
+                            <div class="Latest success"></div><!-- /.result -->
+                        </div><!-- /.contact-one__form-wrap -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.contact-one -->
+
+        <section class="cta-one">
+            <div class="container">
+                <div class="cta-one__circle-1"></div><!-- /.cta-one__circle-1 -->
+                <div class="cta-one__circle-2"></div><!-- /.cta-one__circle-2 -->
+                <div class="cta-one__circle-3"></div><!-- /.cta-one__circle-3 -->
+                <div class="cta-one__content text-center">
+                    <h3>Download our App Today & <br> Experience Endless Possibilities</h3>
+                    <p>and get started with a free 1 month trial for your business</p>
+                    <a href="#" class="thm-btn cta-one__btn">Download Our App</a><!-- /.thm-btn cta-one__btn -->
+                </div><!-- /.cta-one__content -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-one -->
+
+        <footer class="site-footer">
+            <img src="assets/images/shapes/footer-shape-1.png" class="site-footer__shape-1" alt="">
+            <img src="assets/images/shapes/footer-shape-2.png" class="site-footer__shape-2" alt="">
+            <img src="assets/images/shapes/footer-shape-3.png" class="site-footer__shape-3" alt="">
+            <div class="site-footer__upper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__about">
+                                <a class="footer-widget__logo" href="index.html"><img src="assets/images/logo-1-1.png"
+                                        width="105" alt="Awesome Image" /></a>
+                                <p>Lorem Ipsum is simply dummy text the printing and setting industry. Lorm Ipsum has
+                                    been the industry's stanard dummy text ever. </p>
+                                <p><a href="mailto:needhelp@zimed.com">needhelp@zimed.com</a> <br /> <a
+                                        href="tel:666-888-0000">666 888 0000</a></p>
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__links">
+                                <h3 class="footer-widget__title">Explore</h3>
+                                <div class="footer-widget__links-wrap">
+                                    <ul class="list-unstyled">
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                        <li><a href="#">All Features</a></li>
+                                        <li><a href="#">Our Services</a></li>
+                                        <li><a href="#">Latest Blog</a></li>
+                                    </ul><!-- /.list-unstyled -->
+                                    <ul class="list-unstyled">
+                                        <li><a href="#">Help</a></li>
+                                        <li><a href="#">Support</a></li>
+                                        <li><a href="#">Contact us</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Terms & Condition</a></li>
+                                    </ul><!-- /.list-unstyled -->
+                                </div><!-- /.footer-widget__links-wrap -->
+                            </div><!-- /.footer-widget footer-widget__links -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__subscribe">
+                                <h3 class="footer-widget__title">Subscribe</h3>
+                                <form class="footer-widget__mc-form mc-form" data-url="MAILCHIMP__POPUP__FORM__URL">
+                                    <input type="text" name="email" placeholder="Email address">
+                                    <button type="submit" class="thm-btn footer-widget__mc-btn">Register Now</button>
+                                </form>
+                                <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                            </div><!-- /.footer-widget footer-widget__subscribe -->
+                        </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__upper -->
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="inner-container">
+                        <div class="site-footer__social">
+                            <a class="fab fa-facebook-f" href="#"></a>
+                            <a class="fab fa-twitter" href="#"></a>
+                            <a class="fab fa-instagram" href="#"></a>
+                            <a class="fab fa-pinterest-p" href="#"></a>
+                        </div><!-- /.site-footer__social -->
+                        <p>© copyright 2020 by Layerdrops.com</p>
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer__bottom -->
+        </footer><!-- /.site-footer -->
+
+    </div><!-- /.page-wrapper -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+
+    <div class="side-menu__block">
+
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <div class="side-menu__top justify-content-end">
+
+                <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                        src="assets/images/shapes/close-1-1.png" alt=""></a>
+            </div><!-- /.side-menu__top -->
+
+
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+            <div class="side-menu__content">
+                <p>Lorem Ipsum is simply dummy text the printing and setting industry. Lorm Ipsum has been the
+                    industry's stanard dummy text ever. </p>
+                <p><a href="mailto:needhelp@zimed.com">needhelp@zimed.com</a> <br> <a href="tel:888-999-0000">888 999
+                        0000</a></p>
+                <div class="side-menu__social">
+                    <a class="fab fa-facebook-f" href="#"></a>
+                    <a class="fab fa-twitter" href="#"></a>
+                    <a class="fab fa-instagram" href="#"></a>
+                    <a class="fab fa-pinterest-p" href="#"></a>
+                </div>
+            </div><!-- /.side-menu__content -->
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/TweenMax.min.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.bxslider.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- template scripts -->
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
