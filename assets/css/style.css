@@ -3222,6 +3222,10 @@ h6 {
 	}
 }
 
+.item img {
+	height: 90%;
+	border-radius: 20px;
+}
 
 #testimonials-slider-pager .testimonials-slider-pager-one .pager-item {
 	width: 71px;
@@ -3367,7 +3371,7 @@ h6 {
 	background-image: url(../images/app-shots/app-screen-moc.png);
 	background-position: center center;
 	background-repeat: no-repeat;
-	width: 423px;
+	width: 383px;
 	height: 739px;
 }
 
