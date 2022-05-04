@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/zimed-icon.css">
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.bxslider.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -45,7 +46,7 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="main-nav__logo-box">
                         <a href="index.html" class="main-nav__logo">
-                            <img src="assets/images/logo-1-2.png" width="220" alt="Awesome Image" style="margin-top: 13px;">
+                            <img src="assets/images/logo-1-3.png" width="220" alt="Awesome Image" style="margin-top: 13px;">
                         </a>
                         <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
                             <!-- /.smpl-icon-menu --></a>
@@ -88,7 +89,8 @@
             </nav>
         </header><!-- /.main-nav__header-one -->
 
-        <section class="page-header" style="background-image: url(assets/images/background/inner-banner-bg.png);">
+        <section class="page-header">
+            <!--div id="particles-js" style="z-index: 2;"></div-->
             <div class="container">
                 <h2>Blog Page</h2>
             </div><!-- /.container -->
@@ -214,7 +216,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="footer-widget footer-widget__about">
-                                <a class="footer-widget__logo" href="index.html"><img src="assets/images/logo-1-2.png" width="220" alt="Awesome Image" style="margin-top: 13px;"></a>
+                                <a class="footer-widget__logo" href="index.html"><img src="assets/images/logo-1-3.png" width="220" alt="Awesome Image" style="margin-top: 13px;"></a>
                                 <p>Lorem Ipsum is simply dummy text the printing and setting industry. Lorm Ipsum has been the industry's stanard dummy text ever. </p>
                                 <p><a href="mailto:needhelp@zimed.com">needhelp@zimed.com</a> <br /> <a href="tel:666-888-0000">666 888 0000</a></p>
                             </div><!-- /.footer-widget -->
@@ -322,6 +324,111 @@
     <script src="assets/js/jquery.ajaxchimp.min.js"></script>
     <!-- template scripts -->
     <script src="assets/js/theme.js"></script>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 40,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#00ff00"
+                    }
+                },
+                "color": {
+                    "value": "#00ff00"
+                },
+                "opacity": {
+                    "value": 0.5211089197812949,
+                    "random": false,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 8.017060304327615,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 12.181158184520175,
+                        "size_min": 0.1,
+                        "sync": true
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00ff00",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "bounce",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 
 </html>
